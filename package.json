@@ -1,0 +1,20 @@
+{
+  "name": "news-app",
+  "version": "1.0.0",
+  "description": "![license:MIT](https://img.shields.io/badge/license-MIT-green)",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan-Thaoxaochay/news-app.git"
+  },
+  "author": "Bryan Thaoxaochay, Calvin Jacobsen, Brandon Norrgard, Jim Nguyen, Noah Schlag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bryan-Thaoxaochay/news-app/issues"
+  },
+  "homepage": "https://github.com/Bryan-Thaoxaochay/news-app#readme"
+}
