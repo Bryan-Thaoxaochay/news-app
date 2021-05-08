@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Bryan-Thaoxaochay/news-app/issues"
   },
-  "homepage": "https://github.com/Bryan-Thaoxaochay/news-app#readme"
+  "homepage": "https://github.com/Bryan-Thaoxaochay/news-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
 }
