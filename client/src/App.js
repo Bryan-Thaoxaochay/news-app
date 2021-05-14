@@ -1,24 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-// import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
+import Main from "./pages/Main";
+import Article from "./pages/Article";
+import SignupLogin from "./pages/SignupLogin";
 import Nav from "./components/Nav";
-// import { StoreProvider } from "./utils/GlobalState";
-// import FavoritesList from "./pages/FavoritesList";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <StoreProvider> */}
           <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route component={NoMatch} />
+            <Route exact path="/" component={Main} />
+            <Route exact path="/login" component={SignupLogin} />
+            <Route exact path="/article" component={Article} />
           </Switch>
-        {/* </StoreProvider> */}
       </div>
     </Router>
   );
