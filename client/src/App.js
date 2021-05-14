@@ -4,12 +4,15 @@ import Main from "./pages/Main";
 import Article from "./pages/Article";
 import SignupLogin from "./pages/SignupLogin";
 import Nav from "./components/Nav";
+import SideBar from "./components/SideBar";
+
 
 function App() {
   return (
     <Router>
       <div>
           <Nav />
+          <SideBar />
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/login" component={SignupLogin} />
