@@ -1,0 +1,32 @@
+#bodyDiv {
+    height:100vh;
+    width:100%  ;
+    border:solid 1px red;
+}
+
+#newsCard {
+    width:100%;
+    min-height:600px;
+}
+
+#majNews {
+    display:inline-block;
+    padding-right:6px;
+}
+
+#localNews {
+    display:inline-block;
+    padding-left:6px;
+}
+
+#majCol {
+    padding-right:6px;
+}
+
+#locCol {
+    padding-left:6px;
+}
+
+.newsBox {
+    height:100%;
+}
