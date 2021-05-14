@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 
-const Home = () => {
+const Main = () => {
   return (
     <Container fluid>
       <Row>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Main;

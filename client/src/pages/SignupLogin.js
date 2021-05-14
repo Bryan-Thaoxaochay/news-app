@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
-const NoMatch = () => {
+const SignupLogin = () => {
   return (
     <Container fluid>
       <Row>
@@ -21,4 +21,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default SignupLogin;
