@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
+import LoginButton from "../components/LoginBtn";
 import API from "../utils/API";
 
 function SignupLogin() {
@@ -13,18 +14,6 @@ function SignupLogin() {
   //     .then(res => setUsers(res.data))
   //     .catch(err => console.log(err));
   // }
-
-  // Need to access id of user who logs in
-  function handleLogin(event) {
-    event.preventDefault();
-    if (formObject.emailOld && formObject.passwordOld) {
-      API.getUser({
-        email: formObject.emailOld,
-        password: formObject.passwordOld
-      })
-        .catch(err => console.log(err));
-    }
-  };
 
   function handleSignUp(event) {
     event.preventDefault();
@@ -46,9 +35,9 @@ function SignupLogin() {
           <h2>Log In</h2>
           <Input name='emailOld' placeholder='Email' />
           <Input name='passwordOld' placeholder='Password' />
-          <FormBtn onClick={handleLogin}>
+          <LoginButton>
             Log In
-          </FormBtn>
+          </LoginButton>
         </Col>
       </Row>
 
