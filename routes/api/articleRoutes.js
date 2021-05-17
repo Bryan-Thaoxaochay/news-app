@@ -1,11 +1,18 @@
 const router = require('express').Router();
 require('dotenv').config();
 
-router.get('/', async(req, res) => {
-    const api_key = process.env.API_KEY;
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${api_key}`
+router.get('/', (req, res) => {
+    const api_key = process.env.NEWS_API_KEY;
+    const topStoryURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${api_key}`;
 
-    res.send(url);
+    res.send(topStoryURL);
+})
+
+router.get('/:category', (req, res) => {
+    const api_key = process.env.NEWS_API_KEY;
+    const paramsURL=`https://newsapi.org/v2/sources?category=${req.params.category}&apiKey=${api_key}`;
+
+    res.send(paramsURL)
 })
 
 
