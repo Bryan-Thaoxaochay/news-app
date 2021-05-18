@@ -8,14 +8,19 @@ function SideBar() {
         category: ""
     });
 
+
     function handleOnClick(selected) {
         setCategory(selected)
-        console.log(category)
+
+    };
+
+    useEffect(() => {
         API.getCategory(category)
         .then(res =>{
             console.log(res.data)
         });
-    };
+        console.log(category)
+    })
 
 
   ///Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
@@ -28,7 +33,7 @@ function SideBar() {
                             type="button"
                             className="btn btn-link"
                             value="technology"
-                            onClick={() => handleOnClick("technology")}
+                            onClick={()=>handleOnClick("technology")}
                         >
                             Tech
                         </button>
