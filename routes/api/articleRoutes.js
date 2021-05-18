@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 router.get('/:category', (req, res) => {
     const api_key = process.env.NEWS_API_KEY;
-    const paramsURL=`https://newsapi.org/v2/sources?category=${req.params.category}&apiKey=${api_key}`;
+    const paramsURL=`https://newsapi.org/v2/top-headlines?language=en&category=${req.params.category}&apiKey=${api_key}`;
 
     res.send(paramsURL)
 })
