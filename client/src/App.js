@@ -5,6 +5,7 @@ import Article from "./pages/Article";
 import SignupLogin from "./pages/SignupLogin";
 import Nav from "./components/Nav";
 import SideBar from "./components/SideBar";
+import Profile from "./components/Profile";
 
 
 
@@ -14,6 +15,7 @@ function App() {
       <div>
           <Nav />
           <SideBar />
+          <Profile />
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/login" component={SignupLogin} />
