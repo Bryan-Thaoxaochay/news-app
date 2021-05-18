@@ -1,5 +1,7 @@
 import axios from "axios";
 
+
+
 export default {
   // Creating user
   createUser: function(userData) {
@@ -13,10 +15,19 @@ export default {
   getUsers: function() {
     return axios.get('/api/signup');
   },
+
   // Deleting user
   // deleteUser: function() {
   //   return axios.get('/api/signup' + id);
   // }
+
+  getArticles: function() {
+    return axios.get('/api/articles');
+  },
+
+  getCategory: function(params) {
+    return axios.get('/api/articles/' + params)
+  }
 
 
   // // Gets all posts

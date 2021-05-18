@@ -1,4 +1,6 @@
 import React from "react";
+import LoginButton from "../LoginBtn";
+import LogoutButton from "../LogoutBtn";
 
 function Nav() {
   return (
@@ -7,8 +9,8 @@ function Nav() {
       <a className="navbar-brand" href="/">
         NEWS APP
       </a>
-      <button>Login</button>
-      <button>Signup</button>
+      <LoginButton></LoginButton>
+      <LogoutButton></LogoutButton>
     </nav>
   );
 }
