@@ -4,12 +4,14 @@ import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 
+// const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+// const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 ReactDOM.render(
     <Auth0Provider
-        domain="dev-gorzoijf.us.auth0.com"
-        clientId="Vp8Jdu2rlfvi3CVtTm71PHJAihmJMdi2"
-        redirectUri="https://news-app-5.herokuapp.com"
+        domain='dev-gorzoijf.us.auth0.com'
+        clientId='Vp8Jdu2rlfvi3CVtTm71PHJAihmJMdi2'
+        redirectUri={window.location.origin}
     >
         <App />
     </Auth0Provider>,
