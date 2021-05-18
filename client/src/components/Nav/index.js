@@ -1,6 +1,7 @@
 import React from "react";
 import LoginButton from "../LoginBtn";
 import LogoutButton from "../LogoutBtn";
+import DateTime from "../DateTime";
 
 function Nav() {
   return (
@@ -9,6 +10,7 @@ function Nav() {
       <a className="navbar-brand" href="/">
         NEWS APP
       </a>
+      <DateTime />
       <LoginButton></LoginButton>
       <LogoutButton></LogoutButton>
     </nav>
