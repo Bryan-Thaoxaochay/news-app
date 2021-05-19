@@ -1,31 +1,25 @@
+import { load } from 'dotenv';
 import React, { useState, useEffect } from 'react';
-import ArticleCategory from "../../utils/ArticleCategory";
-import API from "../../utils/API"
+import { REACT_APP_NEWS_API_KEY } from "../../apikeys.json";
 
 function SideBar() {
+    const [articles, setArticles] = useState();
 
-    const [category, setCategory] = useState({
-        category: ""
-    });
+    // useEffect(() => {
+    //     loadArticles("");
+    // }, [])
 
+    function loadArticles(category) {
+        fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + REACT_APP_NEWS_API_KEY)
+            .then(res => res.json())
+            .then(result => setArticles(result))
+            .then(() => console.log(articles))
+            .catch(err => console.log(err));
+    }
 
-    function handleOnClick(selected) {
-        setCategory(selected)
-
-    };
-
-    useEffect(() => {
-        API.getCategory(category)
-        .then(res =>{
-            console.log(res.data)
-        });
-        console.log(category)
-    })
-
-
-  ///Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
+  // Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
     return (
-        <ArticleCategory.Provider value={category}>
+        // <ArticleCategory.Provider value={category}>
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ "width": '280px' }}>
                 <ul>
                     <li className="nav-item">
@@ -33,7 +27,7 @@ function SideBar() {
                             type="button"
                             className="btn btn-link"
                             value="technology"
-                            onClick={()=>handleOnClick("technology")}
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Tech
                         </button>
@@ -42,8 +36,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("business")}
+                            value="business"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Business
                         </button>
@@ -52,8 +46,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("general")}
+                            value="general"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             General
                         </button>
@@ -62,8 +56,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("health")}
+                            value="health"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Health
                         </button>
@@ -72,8 +66,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("science")}
+                            value="science"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Science
                         </button>
@@ -82,8 +76,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("entertainment")}
+                            value="entertainment"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Entertainment
                         </button>
@@ -92,15 +86,15 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("sports")}
+                            value="sports"
+                            onClick={e => loadArticles(e.target.value)}
                         >
                             Sports
                         </button>
                     </li>
                 </ul>
             </div>
-        </ArticleCategory.Provider>
+        // </ArticleCategory.Provider>
     )
 };
 
