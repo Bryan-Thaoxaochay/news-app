@@ -1,9 +1,9 @@
-import { load } from 'dotenv';
 import React, { useState, useEffect } from 'react';
 import { REACT_APP_NEWS_API_KEY } from "../../apikeys.json";
+import ArticleContext from "../../utils/ArticleContext";
 
 function SideBar() {
-    const [articles, setArticles] = useState();
+    const [articles, setArticles] = useState({});
 
     // useEffect(() => {
     //     loadArticles("");
@@ -17,9 +17,8 @@ function SideBar() {
             .catch(err => console.log(err));
     }
 
-  // Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
     return (
-        // <ArticleCategory.Provider value={category}>
+        <ArticleContext.Provider value={articles}>
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ "width": '280px' }}>
                 <ul>
                     <li className="nav-item">
@@ -94,7 +93,7 @@ function SideBar() {
                     </li>
                 </ul>
             </div>
-        // </ArticleCategory.Provider>
+        </ArticleContext.Provider>
     )
 };
 
