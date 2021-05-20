@@ -1,6 +1,76 @@
 .leftArrow:hover {
     cursor: pointer;
 }
+
 .rightArrow:hover {
     cursor: pointer;
+}
+
+.leftArrow {
+    position: sticky;
+}
+
+.rightArrow {
+    position: sticky;
+    margin-left: 100px
+}
+
+div.toggledTime {
+    position: fixed;
+    display: inline;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    z-index: 10;
+}
+
+div.toggledTime::selection {
+    color: none;
+    background: none;
+}
+
+div.toggledTime::-moz-selection {
+    color: none;
+    background: none;
+}
+
+div#Week {
+    margin-left: 32px;
+}
+
+div#Month {
+    margin-left: 28px;
+}
+
+div#Year {
+    margin-left: 38px;
+}
+
+ul.bottomToggler {
+    margin-left: -90px;
+}
+
+li.bottomToggleElement::selection {
+    color: none;
+    background: none;
+}
+
+li.bottomToggleElement::-moz-selection {
+    color: none;
+    background: none;
+}
+
+li.bottomToggleElement {
+    position: static;
+    display: inline;
+    margin-left: 15px;
+}
+
+li.bottomToggleElement:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.bottomActive {
+    font-weight: bold;
+    color: rgb(65, 55, 214);
 }
