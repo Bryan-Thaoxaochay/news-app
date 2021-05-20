@@ -8,11 +8,18 @@ router.get('/', (req, res) => {
     res.send(topStoryURL);
 })
 
-router.get('/:category', (req, res) => {
+router.get('/category/:category', (req, res) => {
     const api_key = process.env.NEWS_API_KEY;
     const paramsURL=`https://newsapi.org/v2/top-headlines?language=en&category=${req.params.category}&apiKey=${api_key}`;
 
     res.send(paramsURL)
+})
+
+router.get('/search/:search', (req, res) => {
+    const api_key=process.env.NEWS_API_KEY;
+    const searchURL = `https://newsapi.org/v2/everything?q=${req.params.search}&apiKey=${api_key}`
+
+    res.send(searchURL)
 })
 
 

@@ -2,11 +2,12 @@ import React from "react";
 import LoginButton from "../LoginBtn";
 import LogoutButton from "../LogoutBtn";
 import DateTime from "../DateTime";
+import Search from "../Search"
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <input placeholder="Search"></input>
+      <Search />
       <a className="navbar-brand" href="/">
         NEWS APP
       </a>
