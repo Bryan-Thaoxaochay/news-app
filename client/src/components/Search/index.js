@@ -15,11 +15,11 @@ function Search() {
     const handleOnClick = event => {
         event.preventDefault();
         //Call API here with value from search
-        // API.getCategory(search)
-        //     .then(res => {
-        //         console.log(res.data)
-        //     });
-        // console.log(search)
+        API.getSearch(search)
+            .then(res => {
+                console.log(res.data)
+            });
+        console.log(search)
     };
 
 
