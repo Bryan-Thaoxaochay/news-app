@@ -1,12 +1,5 @@
 import React from "react";
 
-const ArticleContext = React.createContext({
-    author: "",
-    title: "",
-    publishDate: "",
-    imageURL: "",
-    desciption: "",
-    url: "",
-})
+const ArticleContext = React.createContext();
 
 export default ArticleContext;
