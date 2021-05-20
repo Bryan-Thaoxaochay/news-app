@@ -26,9 +26,12 @@ export default {
   },
 
   getCategory: function(params) {
-    return axios.get('/api/articles/' + params)
-  }
+    return axios.get('/api/articles/category/' + params)
+  },
 
+  getSearch: function (search) {
+    return axios.get('/api/articles/search/' + search)
+  }
 
   // // Gets all posts
   // getPosts: function() {
