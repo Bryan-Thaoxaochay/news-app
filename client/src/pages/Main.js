@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { TimeToggler } from "../components/TimeToggler/index.js";
+import CategoryResults from "../components/CategoryResults";
 
 const Main = () => {
   return (
@@ -10,7 +11,8 @@ const Main = () => {
           
         </Col>
         <Col size="md-6 sm-12">
-        <TimeToggler/>
+          <CategoryResults />
+          <TimeToggler/>
         </Col>
       </Row>
     </Container>

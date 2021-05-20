@@ -1,31 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import ArticleCategory from "../../utils/ArticleCategory";
-import API from "../../utils/API"
+import React, { useContext } from 'react';
+import CategoryContext from "../../utils/CategoryContext";
 
 function SideBar() {
+    const { setCategory } = useContext(CategoryContext);
 
-    const [category, setCategory] = useState({
-        category: ""
-    });
-
-
-    function handleOnClick(selected) {
-        setCategory(selected)
-
-    };
-
-    useEffect(() => {
-        API.getCategory(category)
-        .then(res =>{
-            console.log(res.data)
-        });
-        console.log(category)
-    })
-
-
-  ///Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
     return (
-        <ArticleCategory.Provider value={category}>
             <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ "width": '280px' }}>
                 <ul>
                     <li className="nav-item">
@@ -33,7 +12,7 @@ function SideBar() {
                             type="button"
                             className="btn btn-link"
                             value="technology"
-                            onClick={()=>handleOnClick("technology")}
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Tech
                         </button>
@@ -42,8 +21,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("business")}
+                            value="business"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Business
                         </button>
@@ -52,8 +31,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("general")}
+                            value="general"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             General
                         </button>
@@ -62,8 +41,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("health")}
+                            value="health"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Health
                         </button>
@@ -72,8 +51,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("science")}
+                            value="science"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Science
                         </button>
@@ -82,8 +61,8 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("entertainment")}
+                            value="entertainment"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Entertainment
                         </button>
@@ -92,15 +71,14 @@ function SideBar() {
                         <button
                             type="button"
                             className="btn btn-link"
-                            value="technology"
-                            onClick={() => handleOnClick("sports")}
+                            value="sports"
+                            onClick={e => setCategory(e.target.value)}
                         >
                             Sports
                         </button>
                     </li>
                 </ul>
             </div>
-        </ArticleCategory.Provider>
     )
 };
 
