@@ -7,10 +7,10 @@ const Main = () => {
     <Container fluid>
       <Row>
         <Col size="md-6">
-          <TimeToggler ></TimeToggler>
+          
         </Col>
         <Col size="md-6 sm-12">
-        
+        <TimeToggler/>
         </Col>
       </Row>
     </Container>
