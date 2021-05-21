@@ -21,7 +21,6 @@ function App() {
         <ArticleContext.Provider value={{articles, setArticles}}>
         <CategoryContext.Provider value={{category, setCategory}}>
           <Nav />
-          <SideBar />
           <Profile />
           <Switch>
             <Route exact path="/" component={Main} />

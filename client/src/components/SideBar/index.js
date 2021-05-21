@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import {Container} from "../Grid";
 //import ArticleCategory from "../../utils/ArticleCategory";
 import CategoryContext from "../../utils/CategoryContext";
 import API from "../../utils/API"
@@ -23,7 +24,7 @@ function SideBar() {
 
     ///Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
     return (
-        <div className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar-sticky" style={{ "width": '280px' }}>
+       <Container>
             <ul>
                 {category.map(categoryElement => (
                     <li className="categorySearch" >
@@ -39,7 +40,7 @@ function SideBar() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Container>
     )
 };
 
