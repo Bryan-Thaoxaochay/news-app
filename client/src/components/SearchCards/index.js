@@ -1,5 +1,5 @@
 import React from "react";
-import {Container } from "../components/Grid";
+import { Container } from "../Grid";
 import "./style.css";
 
 

@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+//import ArticleCategory from "../../utils/ArticleCategory";
+import CategoryContext from "../../utils/CategoryContext";
 import API from "../../utils/API"
 import "./style.css"
 
 
 function SideBar() {
+    const { setCategory } = useContext(CategoryContext);
 
+    const categories = ["Technology", "Business", "General", "Health", "Science", "Entertainment", "Sports"]
+    const [category] = useState(categories);
 
-    const categories = ["Tech", "Business", "General", "Health", "Science", "Entertainment", "Sports"]
-    const [category, setCategory] = useState(categories);
-
-
-    function handleOnClick(selected) {
-        setCategory(selected)
-
-    };
 
     useEffect(() => {
         API.getCategory(category)
@@ -26,7 +23,7 @@ function SideBar() {
 
     ///Not sure if we want to do the Provider/context thing or not?  Maybe we just make API calls directly from this page instead?
     return (
-        <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ "width": '280px' }}>
+        <div className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar-sticky" style={{ "width": '280px' }}>
             <ul>
                 {category.map(categoryElement => (
                     <li className="categorySearch" >
@@ -34,8 +31,8 @@ function SideBar() {
                             type="button"
                             className="btn btn-link"
                             id={categoryElement}
-                            value="technology"
-                            onClick={() => handleOnClick("technology")}
+                            value={categoryElement}
+                            onClick={e => setCategory(e.target.value)}
                         >
                             {categoryElement}
                         </button>

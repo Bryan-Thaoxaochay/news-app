@@ -2,3 +2,11 @@ li.categorySearch {
     list-style-type: none;
     margin-left: -40px;
 }
+
+.sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px;
+    padding: 0 15px;
+}
+

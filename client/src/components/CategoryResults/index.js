@@ -9,6 +9,7 @@ function CategoryResults() {
     const { category } = useContext(CategoryContext)
     const { articles, setArticles } = useContext(ArticleContext)
 
+    console.log(articles)
     // const { articles, setArticles } = useState(exampleResult);
 
     useEffect(() => {
