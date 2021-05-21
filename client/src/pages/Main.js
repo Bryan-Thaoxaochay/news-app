@@ -13,10 +13,10 @@ const Main = () => {
             <SideBar/>
           </Container>
         </Col>
-        <Col size="8">
-          <Container fluid content>
-            <Carousel></Carousel>
-          </Container>
+          <Col size="8">
+            <Container fluid content>
+              <Carousel></Carousel>
+            </Container>
           <CategoryResults/>
         </Col>
       </Row>
