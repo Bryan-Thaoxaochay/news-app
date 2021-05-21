@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import { REACT_APP_NEWS_API_KEY } from "../../apikeys.json";
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
 import { Col, Row } from "../Grid"
@@ -10,14 +9,9 @@ function CategoryResults() {
     const { category } = useContext(CategoryContext)
     const { articles, setArticles } = useContext(ArticleContext)
 
-    console.log(articles)
-    // const { articles, setArticles } = useState(exampleResult);
-
     useEffect(() => {
         loadArticles()
     }, [category]);
-
-    // console.log(process.env.REACT_APP_NEWS_API_KEY)
 
     function loadArticles() {
         fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
