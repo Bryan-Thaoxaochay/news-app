@@ -15,6 +15,11 @@
     margin-left: 100px
 }
 
+.timeTogglerComponent {
+    margin: 0px 40px 0px 80px;
+    color: aliceblue;
+}
+
 div.toggledTime {
     position: fixed;
     display: inline;
@@ -72,5 +77,5 @@ li.bottomToggleElement:hover {
 
 .bottomActive {
     font-weight: bold;
-    color: rgb(65, 55, 214);
+    color: rgb(245, 138, 67);
 }

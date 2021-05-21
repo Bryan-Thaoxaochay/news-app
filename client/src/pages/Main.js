@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import { TimeToggler } from "../components/TimeToggler/index.js";
+import Carousel from "../components/Carousel";
+import CategoryResults from "../components/CategoryResults";
 
 const Main = () => {
   return (
@@ -10,7 +11,11 @@ const Main = () => {
           
         </Col>
         <Col size="md-6 sm-12">
-        <TimeToggler/>
+
+        <Container fluid className="content">
+          <Carousel></Carousel>
+        </Container>
+          <CategoryResults/>
         </Col>
       </Row>
     </Container>
