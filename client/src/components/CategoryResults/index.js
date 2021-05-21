@@ -9,14 +9,9 @@ function CategoryResults() {
     const { category } = useContext(CategoryContext)
     const { articles, setArticles } = useContext(ArticleContext)
 
-    console.log(articles)
-    // const { articles, setArticles } = useState(exampleResult);
-
     useEffect(() => {
         loadArticles()
     }, [category]);
-
-    // console.log(process.env.REACT_APP_NEWS_API_KEY)
 
     function loadArticles() {
         fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)

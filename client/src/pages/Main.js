@@ -15,6 +15,7 @@ const Main = () => {
         <Container fluid className="content">
           <Carousel></Carousel>
         </Container>
+          <TimeToggler/>
           <CategoryResults/>
         </Col>
       </Row>
