@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Carousel from "../components/Carousel";
-import { TimeToggler } from "../components/TimeToggler/index.js";
 import CategoryResults from "../components/CategoryResults";
 
 const Main = () => {
