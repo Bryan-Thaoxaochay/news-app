@@ -22,5 +22,12 @@ router.get('/search/:search', (req, res) => {
     res.send(searchURL)
 })
 
+router.get('/topheadlines/:category', (req, res) => {
+    // const api_key=process.env.NEWS_API_KEY;
+    const searchURL = `https://newsapi.org/v2/top-headlines?language=en&category=${req.params.category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+
+    res.send(searchURL)
+})
+
 
 module.exports = router;
