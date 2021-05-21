@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import {Container} from "../Grid";
 //import ArticleCategory from "../../utils/ArticleCategory";
 import CategoryContext from "../../utils/CategoryContext";
 import "./style.css"
@@ -11,7 +12,7 @@ function SideBar() {
     const [category] = useState(categories);
 
     return (
-        <div className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar-sticky" style={{ "width": '280px' }}>
+       <Container>
             <ul>
                 {category.map(categoryElement => (
                     <li className="categorySearch" >
@@ -27,7 +28,7 @@ function SideBar() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Container>
     )
 };
 

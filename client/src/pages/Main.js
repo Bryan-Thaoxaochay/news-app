@@ -2,19 +2,21 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Carousel from "../components/Carousel";
 import CategoryResults from "../components/CategoryResults";
+import SideBar from "../components/SideBar";
 
 const Main = () => {
   return (
-    <Container fluid>
+    <Container fluid main>
       <Row>
-        <Col size="md-6">
-          
+        <Col size="4">
+          <Container fluid content>
+            <SideBar/>
+          </Container>
         </Col>
-        <Col size="md-6 sm-12">
-
-        <Container fluid className="content">
-          <Carousel></Carousel>
-        </Container>
+          <Col size="8">
+            <Container fluid content>
+              <Carousel></Carousel>
+            </Container>
           <CategoryResults/>
         </Col>
       </Row>
