@@ -11,8 +11,8 @@ const Main = () => {
           
         </Col>
         <Col size="md-6 sm-12">
-          <CategoryResults />
-          <TimeToggler/>
+          <TimeToggler />
+          <CategoryResults/>
         </Col>
       </Row>
     </Container>
