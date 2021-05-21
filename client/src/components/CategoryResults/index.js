@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { REACT_APP_NEWS_API_KEY } from "../../apikeys.json";
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
 import { Col, Row } from "../Grid"
+require('dotenv').config();
 
 function CategoryResults() {
 
@@ -15,8 +15,10 @@ function CategoryResults() {
         loadArticles()
     }, [category]);
 
+    // console.log(process.env.REACT_APP_NEWS_API_KEY)
+
     function loadArticles() {
-        fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + REACT_APP_NEWS_API_KEY)
+        fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
             .then(res => res.json())
             .then(result => setArticles(result))
             .then(() => console.log(articles))
@@ -25,6 +27,7 @@ function CategoryResults() {
 
     return (
             <Row>
+
                 <Col size="md-6">
                     {articles ? (
                         <ul>
