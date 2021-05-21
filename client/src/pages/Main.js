@@ -6,12 +6,14 @@ import SideBar from "../components/SideBar";
 
 const Main = () => {
   return (
-    <Container fluid>
+    <Container fluid main>
       <Row>
-        <Col size="md-6">
-          <SideBar/>
+        <Col size="4">
+          <Container fluid content>
+            <SideBar/>
+          </Container>
         </Col>
-        <Col size="md-6 sm-12">
+        <Col size="8">
           <Container fluid content>
             <Carousel></Carousel>
           </Container>

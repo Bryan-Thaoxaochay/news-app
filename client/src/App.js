@@ -4,6 +4,7 @@ import Main from "./pages/Main";
 import Article from "./pages/Article";
 import SignupLogin from "./pages/SignupLogin";
 import Nav from "./components/Nav";
+import {Container} from "./components/Grid";
 import Profile from "./components/Profile";
 import SideBar from "./components/SideBar";
 import CategoryContext from "./utils/CategoryContext";
@@ -17,10 +18,10 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <Container fluid window>
         <ArticleContext.Provider value={{articles, setArticles}}>
         <CategoryContext.Provider value={{category, setCategory}}>
-          <Nav />
+          <Nav/>
           <Profile />
           <Switch>
             <Route exact path="/" component={Main} />
@@ -29,7 +30,7 @@ function App() {
           </Switch>
         </CategoryContext.Provider>
         </ArticleContext.Provider>
-      </div>
+      </Container>
     </Router>
   );
 }
