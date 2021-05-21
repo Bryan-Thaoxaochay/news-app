@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import { REACT_APP_NEWS_API_KEY } from "../../apikeys.json";
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
 import { Col, Row } from "../Grid"
