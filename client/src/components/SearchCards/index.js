@@ -5,11 +5,9 @@ import "./style.css";
 
 export function SourceView(props){
     return (
-    <div className={"card articleCard sourceView indexUp" + props.className}>
+    <div className="card sourceCard sourceView indexUp">
         <Container fluid className="sourceSearch">
-            <div className="list-group" id="">
-                
-            </div>
+
             <div data-bs-spy="scroll" data-bs-target="" data-bs-offset="0" class="chScroll" tabindex="0">
                 <SourceBtn/>
                 <SourceCollapse>
@@ -37,12 +35,10 @@ function SourceCollapse(props){
 }
 
 
-export function FullView(props){
-    return (
-    <div className={"card articleCard fullView indexDown" + props.className}>
-       
+function ResultsList(){
+    <div className="list-group" id="">
+
     </div>
-    )
 }
 
 
