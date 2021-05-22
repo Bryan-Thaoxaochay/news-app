@@ -1,5 +1,6 @@
 import React from "react";
 import {SourceView, FullView} from "../SearchCards";
+import './style.css';
 
 function Carousel(props){
     return (
@@ -7,15 +8,13 @@ function Carousel(props){
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <SourceView></SourceView>
-                <FullView></FullView>
             </div>
             <div class="carousel-item">
                 <SourceView></SourceView>
-                <FullView></FullView>
+
             </div>
             <div class="carousel-item">
                 <SourceView></SourceView>
-                <FullView></FullView>
             </div>
         </div>
         <button class="carousel-control-prev carouselBtn" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev"></button>
