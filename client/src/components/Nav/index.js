@@ -10,9 +10,9 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <Search />
-      <a className="navbar-brand" href="/">
-        NEWS APP
+      <a className="navbar-brand" href="./">
       </a>
+      <img src= "assets/logo.png" height= "100px" width= "100px"></img>
       <DateTime />
       <TimeToggler />
       <LoginButton></LoginButton>
