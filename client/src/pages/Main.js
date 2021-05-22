@@ -3,11 +3,19 @@ import { Col, Row, Container } from "../components/Grid";
 import Carousel from "../components/Carousel";
 import CategoryResults from "../components/CategoryResults";
 import SideBar from "../components/SideBar";
+import Profile from "../components/Profile";
+import Nav from "../components/Nav";
 
 const Main = () => {
   return (
     <Container fluid main>
-      <Row>
+      <Row topRow>
+        <Col size="12">
+            <Nav/>
+            <Profile/>
+        </Col>
+      </Row>
+      <Row botRow>
         <Col size="4">
           <Container fluid content>
             <SideBar/>
@@ -17,7 +25,6 @@ const Main = () => {
             <Container fluid content>
               <Carousel></Carousel>
             </Container>
-          <CategoryResults/>
         </Col>
       </Row>
     </Container>
@@ -25,3 +32,5 @@ const Main = () => {
 };
 
 export default Main;
+
+//<CategoryResults/>

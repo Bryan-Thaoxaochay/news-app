@@ -5,13 +5,13 @@ import "./style.css";
 // Exporting the Container, Row, and Col components from this file
 
 // This Container component allows us to use a bootstrap container without worrying about class names
-export function Container({ fluid, content, window, main, children }, props) {
-  return <div className={`container${fluid ? "-fluid" : ""} ${content ? "content" : ""} ${window ? "window" : ""} ${main ? "main" : ""}`}>{children}</div>;
+export function Container({ fluid, content, window, main, navCon, children }) {
+  return <div className={`container${fluid ? "-fluid" : ""} ${content ? "content" : ""} ${window ? "window" : ""} ${main ? "main" : ""} ${navCon ? "navCon" : ""}`}>{children}</div>
 }
 
 // This Row component lets us use a bootstrap row without having to think about class names
-export function Row({ fluid, children }) {
-  return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
+export function Row({ topRow, botRow, children }) {
+  return <div className={`row ${topRow ? "topRow" : ""} ${botRow ? "botRow" : ""}`}>{children}</div>;
 }
 
 // This Col component lets us size bootstrap columns with less syntax
@@ -22,7 +22,7 @@ export function Col({ size, children }) {
       className={size
         .split(" ")
         .map(size => "col-" + size)
-        .join(" ")}
+        .join(" ")}z
     >
       {children}
     </div>
