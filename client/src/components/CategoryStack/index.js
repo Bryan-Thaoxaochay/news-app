@@ -1,8 +1,14 @@
 import React from "react";
-import {SourceView, FullView} from "../SearchCards";
+import {SourceView} from "../SearchCards";
 import './style.css';
 
-function Carousel(props){
+function CategoryStack(props){
+    <div className="catStack">
+
+    </div>
+}
+
+/* function Carousel(props){
     return (
     <div className="carousel slide" id="newsCarousel" data-interval="false">
         <div className="carousel-inner">
@@ -24,8 +30,8 @@ function Carousel(props){
         </button>
     </div>
     )
-};
+}; */
 
 
 
-export default Carousel;
+export default CategoryStack;
