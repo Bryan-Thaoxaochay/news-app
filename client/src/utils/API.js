@@ -31,6 +31,10 @@ export default {
 
   getSearch: function (search) {
     return axios.get('/api/articles/search/' + search)
+  },
+
+  saveArticles: function(userData) {
+    return axios.post('/api/users/', userData);
   }
 
   // // Gets all posts

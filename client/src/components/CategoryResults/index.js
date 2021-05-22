@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
 import { Col, Row } from "../Grid"
-require('dotenv').config();
+import FavButton from "../FavButton";
+
 
 function CategoryResults() {
 
@@ -31,6 +32,10 @@ function CategoryResults() {
                             {articles.articles.map(article => (
                                 <li className="list-group-item">
                                     <p>{article.title}. {article.author}. {article.publishedAt}. {article.description}. {article.url}. {article.urlToImage}</p>
+                                    <FavButton 
+                                    title={article.title}
+                                    url={article.url}
+                                    author={article.author}/>
                                 </li>
                             ))}
                         </ul>
