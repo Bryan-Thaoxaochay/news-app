@@ -23,7 +23,6 @@ const Main = () => {
         </Col>
           <Col size="10">
             <Container fluid content>
-              <Carousel></Carousel>
               <CategoryResults />
             </Container>
         </Col>
