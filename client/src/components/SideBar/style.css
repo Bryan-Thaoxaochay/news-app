@@ -1,13 +1,22 @@
-li.categorySearch {
-    list-style-type: none;
-    margin-left: -40px;
-}
-
 .sidebar-sticky {
-    z-index: 100;
+    position: absolute;
     position: -webkit-sticky;
     position: sticky;
-    top: 90px;
+    top: 160px;
     padding: 0 15px;
+    display: flex;
+    align-items: left;
 }
 
+li.categorySearch {
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.category-icons {
+    margin-right: 20px;
+}
+
+.general-icon::after {
+    content: "<br>"
+}
