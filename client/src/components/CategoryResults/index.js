@@ -41,4 +41,39 @@ function CategoryResults() {
             </Row>
     );
 }
+
+function CategoryStack(props){
+    <div className="catStack">
+
+    </div>
+}
+
+export function GeneraList(props){
+
+}
+
+export function TechList(props){
+
+}
+
+export function HealthList(props){
+
+}
+
+export function SciList(props){
+
+}
+
+export function BizList(props){
+
+}
+
+export function SportsList(props){
+
+}
+
+export function EList(props){
+    
+}
+
 export default CategoryResults;
