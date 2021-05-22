@@ -1,0 +1,23 @@
+.content {
+    height:100%;
+    padding:0px;
+}
+
+.main {
+    height:100%;
+    padding:0px;
+
+}
+
+.window {
+    height:100vh;
+    padding:0px;
+}
+
+.topRow {
+    height:15%;
+}
+
+.botRow {
+    height:85%;
+}

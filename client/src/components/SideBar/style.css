@@ -4,6 +4,7 @@ li.categorySearch {
 }
 
 .sidebar-sticky {
+    z-index: 100;
     position: -webkit-sticky;
     position: sticky;
     top: 90px;

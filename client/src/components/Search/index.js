@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-// import SearchResult from "../../utils/SearchResult";
-import API from "../../utils/API";
+import React, { useState, useContext } from "react";
+import ArticleContext from "../../utils/ArticleContext";
+require('dotenv').config();
 
 function Search() {
 
     const [search, setSearch] = useState();
+    const {articles, setArticles} = useContext(ArticleContext)
 
+    
     const handleInputChange = event => {
 
         const { value } = event.target;
@@ -15,11 +17,10 @@ function Search() {
     const handleOnClick = event => {
         event.preventDefault();
         //Call API here with value from search
-        API.getSearch(search)
-            .then(res => {
-                console.log(res.data)
-            });
-        console.log(search)
+        fetch('https://newsapi.org/v2/everything?q=' + search + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
+            .then(res => res.json())
+            .then(result =>setArticles(result))
+            .catch(err => console.log(err));
     };
 
 
