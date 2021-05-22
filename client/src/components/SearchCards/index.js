@@ -8,7 +8,7 @@ export function SourceView(props){
     <div className="card sourceCard sourceView indexUp">
         <Container fluid content className="sourceSearch">
             <ResultsList/>
-            <div data-bs-spy="scroll" data-bs-target="" data-bs-offset="0" class="chScroll" tabindex="0">
+            <div data-bs-spy="scroll" data-bs-target="" data-bs-offset="0" className="chScroll" tabindex="0">
                 <ArticleList/>
             </div>
         </Container>
