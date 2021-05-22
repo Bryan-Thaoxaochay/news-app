@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import CategoryStack from "../components/CategoryStack";
 import CategoryResults from "../components/CategoryResults";
 import SideBar from "../components/SideBar";
 import Profile from "../components/Profile";
@@ -23,7 +22,7 @@ const Main = () => {
         </Col>
           <Col size="10">
             <Container fluid content>
-              <CategoryResults />
+              <CategoryResults/>
             </Container>
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import { Col, Row } from "../Grid"
+import {Container} from "../Grid"
 require('dotenv').config();
 
 function CategoryResults() {
@@ -23,33 +23,28 @@ function CategoryResults() {
     }
 
     return (
-            <Row>
-
-                <Col size="md-6">
-                    {articles ? (
-                        <ul>
-                            {articles.articles.map(article => (
-                                <li className="list-group-item">
-                                    <p>{article.title}. {article.author}. {article.publishedAt}. {article.description}. {article.url}. {article.urlToImage}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (                        
-                        <h3></h3>
-                    )}
-                </Col>
-            </Row>
-    );
+        <Container fluid content>
+            {articles.articles.map(article => (
+            <div className="card pageCard" id="genCard">
+                <h2>{article.title}</h2>
+                <h4>{article.author}. {article.publishedAt}. {article.url}. {article.urlToImage}</h4>
+                <p>{article.description}</p>
+            </div>
+            ))}
+        </Container>
+    )
 }
 
-function CategoryStack(props){
+/* <Row><p>{article.title}. {article.author}. {article.publishedAt}. {article.description}. {article.url}. {article.urlToImage}</p>  */
+
+/* export function CategoryStack(props){
     <div className="catStack">
 
     </div>
 }
 
 export function GeneraList(props){
-
+    
 }
 
 export function TechList(props){
@@ -73,7 +68,7 @@ export function SportsList(props){
 }
 
 export function EList(props){
-    
-}
+     
+} */
 
 export default CategoryResults;
