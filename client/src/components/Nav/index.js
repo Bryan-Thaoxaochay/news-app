@@ -10,9 +10,9 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <Search />
-      <a className="navbar-brand" href="/">
-        NEWS APP
+      <a className="navbar-brand" href="./">
       </a>
+      <div className="image"><img src= "assets/logo.png" height= "90px" width= "90px"></img></div>
       <DateTime />
       <TimeToggler />
       <LoginButton></LoginButton>
@@ -22,3 +22,4 @@ function Nav() {
 }
 
 export default Nav;
+

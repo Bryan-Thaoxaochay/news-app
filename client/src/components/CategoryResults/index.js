@@ -15,7 +15,7 @@ function CategoryResults() {
 
     function loadArticles() {
         // fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
-        fetch('/topheadlines/' + category)
+        fetch('/api/articles/topheadlines/' + category)
             .then(res => res.json())
             .then(result => setArticles(result))
             .then(() => console.log(articles))
@@ -41,4 +41,39 @@ function CategoryResults() {
             </Row>
     );
 }
+
+function CategoryStack(props){
+    <div className="catStack">
+
+    </div>
+}
+
+export function GeneraList(props){
+
+}
+
+export function TechList(props){
+
+}
+
+export function HealthList(props){
+
+}
+
+export function SciList(props){
+
+}
+
+export function BizList(props){
+
+}
+
+export function SportsList(props){
+
+}
+
+export function EList(props){
+    
+}
+
 export default CategoryResults;

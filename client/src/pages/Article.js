@@ -1,40 +1,37 @@
-import React, {useState, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API"
+import ArticleContext from "../utils/ArticleContext";
 
 function Article() {
 
-    const [category, setCategory] = useState("business")
-
-    //this API call gets the link for top stories in the US
-    API.getArticles()
-    .then(res =>{
-        console.log(res.data)
-    });
-
-
-    //this API call gets the link for articles related to the category selected
-    //currently, it's set to "business" but setCategory will dynamically change it 
-    API.getCategory(category)
-    .then(res =>{
-        console.log(res.data)
-    });
+    //change this to user Data and pull in user data, using 
+    //articles for now to build results
+    const { articles, setArticles } = useContext(ArticleContext)
+    console.log(articles)
 
 
     return (
         <Container fluid>
             <Row>
-            <Col size="md-12">
-                <Jumbotron>
-                <h1>404 Page Not Found</h1>
-                <h1>
-                    <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                    🙄
-                    </span>
-                </h1>
-                </Jumbotron>
-            </Col>
+                <Col size="md-12">
+                    <Jumbotron>
+                        {articles ? (
+                            <ul>
+                                {articles.articles.map(article => (                    
+                                    <li className="list-group-item">
+                                        <strong>
+                                        {article.title} from {article.publishedAt} 
+                                        </strong>
+                                    </li>
+
+                                ))}
+                            </ul>
+                        ) : (
+                            <h3>User has not saved any articles</h3>
+                        )}
+                    </Jumbotron>
+                </Col>
             </Row>
         </Container>
     );

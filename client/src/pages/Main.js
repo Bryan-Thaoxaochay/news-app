@@ -1,21 +1,30 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import Carousel from "../components/Carousel";
+import CategoryStack from "../components/CategoryStack";
 import CategoryResults from "../components/CategoryResults";
+import SideBar from "../components/SideBar";
+import Profile from "../components/Profile";
+import Nav from "../components/Nav";
 
 const Main = () => {
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-6">
-          
+    <Container fluid main>
+      <Row topRow>
+        <Col size="12">
+            <Nav/>
+            <Profile/>
         </Col>
-        <Col size="md-6 sm-12">
-
-        <Container fluid className="content">
-          <Carousel></Carousel>
-        </Container>
-          <CategoryResults/>
+      </Row>
+      <Row botRow>
+        <Col size="2">
+          <Container fluid content>
+            <SideBar/>
+          </Container>
+        </Col>
+          <Col size="10">
+            <Container fluid content>
+              <CategoryResults />
+            </Container>
         </Col>
       </Row>
     </Container>
@@ -23,3 +32,5 @@ const Main = () => {
 };
 
 export default Main;
+
+//<CategoryResults/>
