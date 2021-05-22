@@ -21,7 +21,6 @@ function Search() {
         fetch('/api/articles/search/' + search)
             .then(res => res.json())
             .then(result =>setArticles(result))
-            .then(console.log(articles))
             .catch(err => console.log(err));
     };
 
