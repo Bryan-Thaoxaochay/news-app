@@ -15,7 +15,7 @@ function CategoryResults() {
 
     function loadArticles() {
         // fetch('https://newsapi.org/v2/top-headlines?language=en&category=' + category + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
-        fetch('/topheadlines/' + category)
+        fetch('/api/articles/topheadlines/' + category)
             .then(res => res.json())
             .then(result => setArticles(result))
             .then(() => console.log(articles))

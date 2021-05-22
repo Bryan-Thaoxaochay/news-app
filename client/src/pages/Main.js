@@ -23,6 +23,7 @@ const Main = () => {
         </Col>
           <Col size="10">
             <Container fluid content>
+              <CategoryResults />
             </Container>
         </Col>
       </Row>
