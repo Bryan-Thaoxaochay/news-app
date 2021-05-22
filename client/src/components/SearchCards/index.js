@@ -2,45 +2,34 @@ import React from "react";
 import { Container } from "../Grid";
 import "./style.css";
 
-
+//data-bs-target is listgroup's ID
 export function SourceView(props){
     return (
-    <div className={"card articleCard sourceView indexUp" + props.className}>
-        <Container fluid className="sourceSearch">
-            <div className="list-group" id="">
-                
-            </div>
+    <div className="card sourceCard sourceView indexUp">
+        <Container fluid content className="sourceSearch">
+            <ResultsList/>
             <div data-bs-spy="scroll" data-bs-target="" data-bs-offset="0" class="chScroll" tabindex="0">
-                <SourceBtn/>
-                <SourceCollapse>
-
-                </SourceCollapse>
+                <ArticleList/>
             </div>
         </Container>
     </div>
     )
 };
 
-function SourceBtn(props){
-    return(
-    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="false" aria-controls=""></button>
-    )
-}
-
-function SourceCollapse(props){
+//ID of articles should depend on info being passed in
+function ArticleList(props){
     return (
-    <div class="collapse" id="">
-        <div class="card card-body">
-        </div>
+    <div className="card articleCard" id="">
+
     </div>
     )
 }
 
 
-export function FullView(props){
+function ResultsList(){
     return (
-    <div className={"card articleCard fullView indexDown" + props.className}>
-       
+    <div className="list-group" id="">
+        
     </div>
     )
 }

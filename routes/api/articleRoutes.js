@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const axios = require('axios');
 require('dotenv').config();
 
 router.get('/', (req, res) => {
@@ -23,10 +24,10 @@ router.get('/search/:search', (req, res) => {
 })
 
 router.get('/topheadlines/:category', (req, res) => {
-    // const api_key=process.env.NEWS_API_KEY;
     const searchURL = `https://newsapi.org/v2/top-headlines?language=en&category=${req.params.category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
-
-    res.send(searchURL)
+    axios.get(searchURL).then(results => {
+        res.send(results.data)
+    })
 })
 
 

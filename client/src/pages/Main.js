@@ -16,14 +16,15 @@ const Main = () => {
         </Col>
       </Row>
       <Row botRow>
-        <Col size="4">
+        <Col size="2">
           <Container fluid content>
             <SideBar/>
           </Container>
         </Col>
-          <Col size="8">
+          <Col size="10">
             <Container fluid content>
               <Carousel></Carousel>
+              <CategoryResults />
             </Container>
         </Col>
       </Row>
