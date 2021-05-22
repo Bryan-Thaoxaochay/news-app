@@ -17,9 +17,13 @@ function Search() {
     const handleOnClick = event => {
         event.preventDefault();
         //Call API here with value from search
-        fetch('https://newsapi.org/v2/everything?q=' + search + '&apiKey=' + process.env.REACT_APP_NEWS_API_KEY)
+        // console.log(search)
+        fetch('/api/articles/search/' + search)
             .then(res => res.json())
-            .then(result =>setArticles(result))
+            .then(result =>console.log(result)
+                // setArticles(result)
+                )
+            .then(console.log(articles))
             .catch(err => console.log(err));
     };
 
