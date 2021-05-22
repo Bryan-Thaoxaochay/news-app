@@ -9,10 +9,7 @@ export function SourceView(props){
         <Container fluid className="sourceSearch">
 
             <div data-bs-spy="scroll" data-bs-target="" data-bs-offset="0" class="chScroll" tabindex="0">
-                <SourceBtn/>
-                <SourceCollapse>
-
-                </SourceCollapse>
+                <ArticleList/>
             </div>
         </Container>
     </div>
@@ -21,16 +18,15 @@ export function SourceView(props){
 
 function SourceBtn(props){
     return(
-    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="false" aria-controls=""></button>
+    <button className="btn" type="button" data-bs-toggle="collapse" data-bs-target="" aria-expanded="false" aria-controls=""></button>
     )
 }
 
-function SourceCollapse(props){
+function ArticleList(props){
     return (
-    <div class="collapse" id="">
-        <div class="card card-body">
+        <div className="card articleCard">
+            
         </div>
-    </div>
     )
 }
 

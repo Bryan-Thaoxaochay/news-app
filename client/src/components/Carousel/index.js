@@ -17,11 +17,13 @@ function Carousel(props){
                 <SourceView></SourceView>
             </div>
         </div>
-        <button class="carousel-control-prev carouselBtn" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev"></button>
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button class="carousel-control-prev carBtn" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
 
-        <button class="carousel-control-next carBtn" type="button" data-bs-target="#newsCarousel" data-bs-slide="next"></button>
+        <button class="carousel-control-next carBtn" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
     </div>
     )
 };
