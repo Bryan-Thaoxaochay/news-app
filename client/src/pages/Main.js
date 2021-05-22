@@ -24,6 +24,7 @@ const Main = () => {
           <Col size="8">
             <Container fluid content>
               <Carousel></Carousel>
+              <CategoryResults />
             </Container>
         </Col>
       </Row>
