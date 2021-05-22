@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import ArticleContext from "../../utils/ArticleContext";
+import "./style.css";
 require('dotenv').config();
+
 
 function Search() {
 

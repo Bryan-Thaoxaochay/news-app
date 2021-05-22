@@ -12,7 +12,7 @@ function Nav() {
       <Search />
       <a className="navbar-brand" href="./">
       </a>
-      <img src= "assets/logo.png" height= "100px" width= "100px"></img>
+      <div className="image"><img src= "assets/logo.png" height= "90px" width= "90px"></img></div>
       <DateTime />
       <TimeToggler />
       <LoginButton></LoginButton>
