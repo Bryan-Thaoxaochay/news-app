@@ -20,9 +20,7 @@ function Search() {
         // console.log(search)
         fetch('/api/articles/search/' + search)
             .then(res => res.json())
-            .then(result =>console.log(result)
-                // setArticles(result)
-                )
+            .then(result =>setArticles(result))
             .then(console.log(articles))
             .catch(err => console.log(err));
     };
