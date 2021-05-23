@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import { Col, Row } from "../Grid"
+import {Container} from "../Grid"
 import FavButton from "../FavButton";
+import './style.css'
 
 
 function CategoryResults() {
@@ -24,15 +25,24 @@ function CategoryResults() {
     }
 
     return (
-            <Row>
-
-                <Col size="md-6">
+            <div class="card articlesCard">
                     {articles ? (
                         <ul>
                             {articles.articles.map(article => (
                                 <li className="list-group-item">
-                                    <p>{article.title}. {article.author}. {article.publishedAt}. {article.description}. {article.url}. {article.urlToImage}</p>
-                                    <FavButton 
+                                    <Container>
+                                    <img className="articleImg" src={article.urlToImage}></img>
+                                    </Container>
+                                    <h5>
+                                        <a href={article.url}>
+                                        {article.title}
+                                        </a>
+                                    </h5>
+                                    <h7>
+                                    {article.author}. {article.publishedAt}.
+                                    </h7>
+                                    <p>{article.description}.</p>
+                                    <FavButton
                                     title={article.title}
                                     url={article.url}
                                     author={article.author}/>
@@ -42,43 +52,10 @@ function CategoryResults() {
                     ) : (                        
                         <h3></h3>
                     )}
-                </Col>
-            </Row>
+            </div>
     );
 }
 
-function CategoryStack(props){
-    <div className="catStack">
 
-    </div>
-}
-
-export function GeneraList(props){
-
-}
-
-export function TechList(props){
-
-}
-
-export function HealthList(props){
-
-}
-
-export function SciList(props){
-
-}
-
-export function BizList(props){
-
-}
-
-export function SportsList(props){
-
-}
-
-export function EList(props){
-    
-}
 
 export default CategoryResults;
