@@ -14,12 +14,9 @@
     padding:0px;
 }
 
-.headCon {
-    height:30%;
-}
-
 .artCon {
-    height:70%;
+    height:100%;
+    display:inline-block;
 }
 
 .topRow {
