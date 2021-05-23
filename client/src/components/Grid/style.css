@@ -14,6 +14,11 @@
     padding:0px;
 }
 
+.artCon {
+    height:100%;
+    display:inline-block;
+}
+
 .topRow {
     height:10%;
 }
