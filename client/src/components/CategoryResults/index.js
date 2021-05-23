@@ -30,8 +30,8 @@ function CategoryResults() {
                         <ul>
                             {articles.articles.map(article => (
                                 <li className="list-group-item">
-                                    <Container>
-                                    <img className="articleImg" src={article.urlToImage}></img>
+                                    <Container imgCon>
+                                    <img className="img-fluid articleImg" src={article.urlToImage}></img>
                                     </Container>
                                     <h5>
                                         <a href={article.url}>
