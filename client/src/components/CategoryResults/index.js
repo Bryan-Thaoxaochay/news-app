@@ -30,18 +30,20 @@ function CategoryResults() {
                         <ul>
                             {articles.articles.map(article => (
                                 <li className="list-group-item">
-                                    <Container imgCon>
+                                    <Container fluid headCon>
                                     <img className="img-fluid articleImg" src={article.urlToImage}></img>
-                                    </Container>
-                                    <h5>
-                                        <a href={article.url}>
-                                        {article.title}
-                                        </a>
+                                    <h5 className="text-break title">
+                                            <a href={article.url}>
+                                            {article.title}
+                                            </a>
                                     </h5>
-                                    <h7>
-                                    {article.author}. {article.publishedAt}.
-                                    </h7>
-                                    <p>{article.description}.</p>
+                                    </Container>
+                                    <Container fluid artCon>
+                                        <h7>
+                                        {article.author}, {article.publishedAt}.
+                                        </h7>
+                                        <p>{article.description}.</p>
+                                    </Container>
                                     <FavButton
                                     title={article.title}
                                     url={article.url}

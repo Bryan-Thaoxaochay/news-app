@@ -1,3 +1,10 @@
-articleImg {
-    
+.title {
+    display:inline-block;
+    width:70%;
 }
+
+.articleImg{
+    height:100%;
+    width:30%;
+}
+
