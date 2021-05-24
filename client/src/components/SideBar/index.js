@@ -6,6 +6,7 @@ import "./style.css"
 
 
 function SideBar() {
+
     const { setCategory } = useContext(CategoryContext);
 
     const categories = [
@@ -16,10 +17,6 @@ function SideBar() {
         {
             name: "Technology",
             icon: "/assets/tech.svg",
-        },
-        {
-            name: "Finance",
-            icon: "/assets/finance.svg",
         },
         {
             name: "Business",
@@ -48,13 +45,13 @@ function SideBar() {
 const [category] = useState(categories);
 
 return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar-sticky" style={{ "width": '280px' }}>
+    <div className="d-flex flex-column flex-shrink-0 p-3 sidebar-sticky" style={{ "width": '280px' }}>
         <ul>
             {category.map(categoryElement => (
-                <li className="categorySearch" >
+                <li className="categorySearch">
                     <button
                         type="button"
-                        className="btn btn-link"
+                        className="btn btn-link category-link"
                         id={categoryElement.name}
                         value={categoryElement.name}
                         onClick={e => setCategory(e.target.value)}

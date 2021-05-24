@@ -8,7 +8,7 @@ function LoginButton() {
 
     return (
         !isAuthenticated && (
-            <button onClick={() => loginWithRedirect()}>Log In</button>
+            <button className="login-btn" onClick={() => loginWithRedirect()}>Log In</button>
         )
     );
 };

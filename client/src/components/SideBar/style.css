@@ -1,16 +1,25 @@
 .sidebar-sticky {
-    position: absolute;
     position: -webkit-sticky;
-    position: sticky;
-    top: 160px;
+    position: fixed;
     padding: 0 15px;
-    display: flex;
-    align-items: left;
+    
 }
 
 li.categorySearch {
     margin-top: 10px;
+    margin-left: -40px;
     list-style-type: none;
+    
+}
+
+button.category-link {
+    color: black;
+    text-decoration: none;
+}
+
+.categorySearch:hover {
+    color: rgb(0, 0, 255);
+    text-decoration: none;
 }
 
 .category-icons {
