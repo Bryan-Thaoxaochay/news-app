@@ -1,4 +1,4 @@
-button {
-    color: pink;
-    background-color: black;
+.login-btn {
+    background-color: #265077;
+    color: white;
 }
