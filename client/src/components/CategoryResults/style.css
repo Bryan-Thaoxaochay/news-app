@@ -18,7 +18,7 @@
 }
 
 .articleImg{
-    display:inline-block;
+    float:left;
     height:100%;
     width:30%;
 }
@@ -29,12 +29,10 @@
 }
 
 .authorDate {
-    display:inline-block;
+    float:left;
+    font-weight:bold;
     vertical-align:top;
-}
-
-.artText{   
-    float:right;
+    width:70%
 }
 
 .card-body{

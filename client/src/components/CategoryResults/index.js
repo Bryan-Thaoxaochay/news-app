@@ -42,7 +42,7 @@ function CategoryResults() {
                                             <h7 className="text-break authorDate">
                                                 {article.author}, {article.publishedAt}.
                                             </h7>
-                                            <p className="card-text text-break artText">{article.description}.</p>
+                                            <p className="card-text text-start text-break artText">{article.description}.</p>
                                             <FavButton title={article.title} url={article.url} author={article.author}/> 
                                     </div>                              
                                     </div>
