@@ -1,15 +1,29 @@
 .sidebar-sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 160px;
+    top: 11.5%;
     padding:0px;
     display: flex;
     width:100%;
+    height:88.5%;
 }
 
-li.categorySearch {
-    margin-top: 10px;
+.catHeader{
+    width:100%;
+    padding-left:20%;
+    background-color:#256077;
+    border-bottom:1px solid #494b68;
+    color:white;
+}
+
+.categorySearch {
     list-style-type: none;
+    border-bottom:solid 1px #494b68;
+    background-color:#256077;
+}
+
+.btn-link{
+    color:white;
 }
 
 .category-icons {
@@ -20,10 +34,9 @@ li.categorySearch {
     content: "<br>"
 }
 
-.btn-link {
-    color:white;
-}
-
 #catList {
-    padding-left:5%;
+    width:100%;
+    border-radius:8px;
+    border:2px solid #022140;
+    background-color:#256077;
 }

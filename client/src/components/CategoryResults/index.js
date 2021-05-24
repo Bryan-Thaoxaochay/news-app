@@ -27,13 +27,13 @@ function CategoryResults() {
     return (
             <div class="card articlesDiv">
                     {articles ? (
-                        <ul>
+                        <ul id="artList">
                             {articles.articles.map(article => (
                                 <li className="list-group-item article">
                                     <Container fluid artCon>
                                     <div className="card articlesCard">
-                                    <h5 className="card-header text-break title">
-                                            <a href={article.url}>
+                                    <h5 className="card-header articleHeader">
+                                            <a  className="text-break title" href={article.url}>
                                             {article.title}
                                             </a>
                                     </h5>
@@ -48,7 +48,7 @@ function CategoryResults() {
                                                 {article.publishedAt}.
                                             </h7>
                                             )}          
-                                            <p className="card-text text-start text-break artText">{article.description}.</p>
+                                            <p className="card-text text-start text-break artText">{article.description}..</p>
                                             <FavButton title={article.title} url={article.url} author={article.author}/> 
                                     </div>                              
                                     </div>
