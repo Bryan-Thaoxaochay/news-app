@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import {Container} from "../Grid"
+import {Container,} from "../Grid"
 import FavButton from "../FavButton";
 import './style.css'
 
@@ -25,27 +25,34 @@ function CategoryResults() {
     }
 
     return (
-            <div class="card articlesCard">
+            <div class="card articlesDiv">
                     {articles ? (
                         <ul>
                             {articles.articles.map(article => (
-                                <li className="list-group-item">
+                                <li className="list-group-item article">
                                     <Container fluid artCon>
-                                    <img className="img-fluid articleImg" src={article.urlToImage}></img>
-                                    <h5 className="text-break title">
+                                    <div className="card articlesCard">
+                                    <h5 className="card-header text-break title">
                                             <a href={article.url}>
                                             {article.title}
                                             </a>
-                                    </h5>                                        
-                                    <h7 className="text-break authorDate">
-                                        {article.author}, {article.publishedAt}.
-                                    </h7>
-                                    <p>{article.description}.</p>
+                                    </h5>
+                                    <div class="card-body">
+                                            <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
+                                            {article.author ? (
+                                            <h7 className="text-break authorDate">
+                                                {article.author}, {article.publishedAt}.
+                                            </h7>
+                                            ) : (
+                                            <h7 className="text-break authorDate">
+                                                {article.publishedAt}.
+                                            </h7>
+                                            )}          
+                                            <p className="card-text text-start text-break artText">{article.description}.</p>
+                                            <FavButton title={article.title} url={article.url} author={article.author}/> 
+                                    </div>                              
+                                    </div>
                                     </Container>
-                                    <FavButton
-                                    title={article.title}
-                                    url={article.url}
-                                    author={article.author}/>
                                 </li>
                             ))}
                         </ul>
@@ -59,3 +66,7 @@ function CategoryResults() {
 
 
 export default CategoryResults;
+
+/*
+
+*/
