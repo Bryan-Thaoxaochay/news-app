@@ -2,22 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    user: {
+  name: {
     type: String, required: true 
     },
-    title: {
-      type: String, required: true
+  email: { 
+    type: String, required: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'], unique: true
     },
-    url: {
-      type: String, required: true
+  password: {
+    type: String, required: true, min: [8, 'Password must be longer than 8 characters']
     },
-    author: {
-      type: String, required: false
-    },
-    date: {
+  date: {
     type: Date, default: Date.now
     }
-
 })
 
 const User = mongoose.model('User', userSchema);

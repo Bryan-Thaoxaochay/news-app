@@ -35,6 +35,14 @@ export default {
 
   saveArticles: function(userData) {
     return axios.post('/api/users/', userData);
+  },
+
+  getSavedArticles: function() {
+    return axios.get('/api/users/')
+  },
+
+  deleteSavedArticles: function(id) {
+    return axios.delete('/api/users/' + id)
   }
 
   // // Gets all posts
