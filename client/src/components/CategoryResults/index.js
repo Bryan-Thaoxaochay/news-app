@@ -38,10 +38,16 @@ function CategoryResults() {
                                             </a>
                                     </h5>
                                     <div class="card-body">
-                                            <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>          
+                                            <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
+                                            {article.author ? (
                                             <h7 className="text-break authorDate">
                                                 {article.author}, {article.publishedAt}.
                                             </h7>
+                                            ) : (
+                                            <h7 className="text-break authorDate">
+                                                {article.publishedAt}.
+                                            </h7>
+                                            )}          
                                             <p className="card-text text-start text-break artText">{article.description}.</p>
                                             <FavButton title={article.title} url={article.url} author={article.author}/> 
                                     </div>                              
