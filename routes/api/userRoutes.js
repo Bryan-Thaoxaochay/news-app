@@ -1,16 +1,18 @@
 const router = require('express').Router();
 const { User } = require('../../models/User');
 const usersController = require('../../controllers/usersController');
+const articlesController = require('../../controllers/articlesController')
 
-// Matches w/ '/api/signup'
+// updated this to articlesController, to clear 'email' error when using usersController
+// matches with /api/users/
 router.route('/')
-  .get(usersController.findAll)
-  .post(usersController.create);
+  .get(articlesController.findAll)
+  .post(articlesController.create);
 
-// Matches w/ '/api/signup/:id'
-router.route('/id')
-  .get(usersController.findById)
-  .delete(usersController.remove);
+// Matches w/ '/api/users/:id'
+router.route('/:id')
+  .get(articlesController.findById)
+  .delete(articlesController.remove);
 
 // // Rendering Login Page
 // router.get('/login', async (req, res) => {
