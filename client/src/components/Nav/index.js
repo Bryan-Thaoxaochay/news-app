@@ -8,7 +8,7 @@ import { TimeToggler } from "../TimeToggler";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <Search />
       <a className="navbar-brand" href="./">
       </a>
