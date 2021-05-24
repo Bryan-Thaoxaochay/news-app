@@ -8,9 +8,9 @@ const userSchema = new Schema({
   email: { 
     type: String, required: true, match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'], unique: true
     },
-  password: {
-    type: String, required: true, min: [8, 'Password must be longer than 8 characters']
-    },
+  auth: {
+    type: String, required: true
+  },
   date: {
     type: Date, default: Date.now
     }

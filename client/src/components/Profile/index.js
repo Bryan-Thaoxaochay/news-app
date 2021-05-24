@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import API from '../../utils/API';
 
 function Profile() {
     const { user, isAuthenticated } = useAuth0();
+    const { users, setUsers } = useState();
+
+    useEffect(() => {
+        checkUser()
+    }, [user])
+
+    function checkUser() {
+        API.getUsers()
+            .then(res => setUsers(res.data))
+            .then(() => {
+                for (let i = 0; i < users.length; i++) {
+                    if (JSON.stringify(user.sub) === users.auth) {
+                        console.log("User already exists.")
+                    } else {
+                        userData = {
+                            name: user.name,
+                            email: user.email,
+                            auth: user.sub,
+                            date: new Date(Date.now())
+                        }
+                        API.createUser(userData)
+                    }
+                }
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
         isAuthenticated && (
@@ -15,5 +42,4 @@ function Profile() {
         )
     );
 };
-
 export default Profile;
