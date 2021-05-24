@@ -5,22 +5,23 @@ import SideBar from "../components/SideBar";
 import Profile from "../components/Profile";
 import Nav from "../components/Nav";
 
+
 const Main = () => {
   return (
     <Container fluid main>
       <Row topRow>
         <Col size="12">
             <Nav/>
-            <Profile/>
+            {/* <Profile/> */}
         </Col>
       </Row>
       <Row botRow>
-        <Col size="2">
+        <Col size="3">
           <Container fluid content>
             <SideBar/>
           </Container>
         </Col>
-          <Col size="10">
+          <Col size="9">
             <Container fluid content>
               <CategoryResults />
             </Container>

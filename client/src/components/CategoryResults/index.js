@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import { Col, Row } from "../Grid"
-require('dotenv').config();
+import {Container,} from "../Grid"
+import FavButton from "../FavButton";
+import './style.css'
+
 
 function CategoryResults() {
 
@@ -23,57 +25,53 @@ function CategoryResults() {
     }
 
     return (
-            <Row>
-
-                <Col size="md-6">
+            <div class="card articlesDiv">
                     {articles ? (
-                        <ul>
+                        <ul id="artList">
                             {articles.articles.map(article => (
-                                <li className="list-group-item">
-                                    <p>{article.title}. {article.author}. {article.publishedAt}. {article.description}. {article.url}. {article.urlToImage}</p>
+                                <li className="list-group-item article">
+                                    <Container fluid artCon>
+                                    <div className="card articlesCard">
+                                    <h5 className="card-header articleHeader">
+                                            <a  className="text-break title" href={article.url}>
+                                            {article.title}
+                                            </a>
+                                    </h5>
+                                    <div class="card-body">
+                                            <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
+                                            {article.author ? (
+                                            <h7 className="text-break authorDate">
+                                                {article.author}, {article.publishedAt}.
+                                            </h7>
+                                            ) : (
+                                            <h7 className="text-break authorDate">
+                                                {article.publishedAt}.
+                                            </h7>
+                                            )}          
+                                            <p className="card-text text-start text-break artText">{article.description}..</p>
+                                            <FavButton 
+                                            title={article.title} 
+                                            url={article.url} 
+                                            author={article.author}
+                                            image={article.urlToImage}
+                                            /> 
+                                    </div>                              
+                                    </div>
+                                    </Container>
                                 </li>
                             ))}
                         </ul>
                     ) : (                        
                         <h3></h3>
                     )}
-                </Col>
-            </Row>
+            </div>
     );
 }
 
-function CategoryStack(props){
-    <div className="catStack">
 
-    </div>
-}
-
-export function GeneraList(props){
-
-}
-
-export function TechList(props){
-
-}
-
-export function HealthList(props){
-
-}
-
-export function SciList(props){
-
-}
-
-export function BizList(props){
-
-}
-
-export function SportsList(props){
-
-}
-
-export function EList(props){
-    
-}
 
 export default CategoryResults;
+
+/*
+
+*/

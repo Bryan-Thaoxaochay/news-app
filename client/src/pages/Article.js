@@ -1,14 +1,31 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import ArticleContext from "../utils/ArticleContext";
+import DeleteBtn from "../components/DeleteBtn"
+import API from "../utils/API"
 
 function Article() {
 
-    //change this to user Data and pull in user data, using 
-    //articles for now to build results
-    const { articles, setArticles } = useContext(ArticleContext)
-    console.log(articles)
+    const [savedArticles, setSavedArticles] = useState();
+
+    useEffect(()=> {
+        loadArticles()
+    }, [])
+
+    function loadArticles() {
+        API.getSavedArticles()
+            .then(res => setSavedArticles(res.data))
+            // .then(console.log(savedArticles))
+            .catch(err => console.log(err));
+    }
+
+    function deleteSavedArticles(id) {
+        API.deleteSavedArticles(id)
+        .then(res => loadArticles())
+        .catch(err => console.log(err));
+    }
+
+
 
 
     return (
@@ -16,13 +33,15 @@ function Article() {
             <Row>
                 <Col size="md-12">
                     <Jumbotron>
-                        {articles ? (
+                        {savedArticles ? (
                             <ul>
-                                {articles.articles.map(article => (                    
+                                {savedArticles.map(article => (
                                     <li className="list-group-item">
+                                        {/* <img className="img-fluid img-thumbnail" src={article.image}></img> */}
                                         <strong>
-                                        {article.title} from {article.publishedAt} 
+                                            <a href={article.url}>{article.title}</a> saved on {article.date}
                                         </strong>
+                                        <DeleteBtn onClick={() => deleteSavedArticles(article._id)} />
                                     </li>
 
                                 ))}
