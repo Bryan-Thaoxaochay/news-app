@@ -13,7 +13,7 @@ const articleSchema = new Schema({
   url: {
     type: String, 
     required: true,
-    unique: true
+    unique: false
   },
   author: {
     type: String, 
