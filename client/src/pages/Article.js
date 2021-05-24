@@ -37,6 +37,7 @@ function Article() {
                             <ul>
                                 {savedArticles.map(article => (
                                     <li className="list-group-item">
+                                        {/* <img className="img-fluid img-thumbnail" src={article.image}></img> */}
                                         <strong>
                                             <a href={article.url}>{article.title}</a> saved on {article.date}
                                         </strong>
