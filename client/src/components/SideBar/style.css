@@ -1,11 +1,10 @@
 .sidebar-sticky {
-    position: absolute;
     position: -webkit-sticky;
     position: sticky;
     top: 160px;
     padding:0px;
     display: flex;
-    align-items: left;
+    width:100%;
 }
 
 li.categorySearch {
@@ -19,4 +18,12 @@ li.categorySearch {
 
 .general-icon::after {
     content: "<br>"
+}
+
+.btn-link {
+    color:white;
+}
+
+#catList {
+    padding-left:5%;
 }

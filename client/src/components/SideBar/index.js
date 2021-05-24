@@ -48,8 +48,8 @@ function SideBar() {
 const [category] = useState(categories);
 
 return (
-    <div className="sidebar-sticky" style={{ "width": '280px' }}>
-        <ul>
+    <div className="sidebar-sticky">
+        <ul id="catList">
             {category.map(categoryElement => (
                 <li className="categorySearch" >
                     <button

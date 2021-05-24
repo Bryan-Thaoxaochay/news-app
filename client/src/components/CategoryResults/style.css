@@ -8,6 +8,7 @@
     border:none;
     padding-left:0px;
     padding-right:10%;
+    background-color:#022140;
 }
 
 .article{
@@ -15,6 +16,7 @@
     padding:0px;
     border:none;
     min-height:200px;
+    background-color:#022140;
 }
 
 .articleImg{
@@ -27,6 +29,7 @@
 .articlesCard{
     border-radius:8px;
     height:100%;
+
 }
 
 .authorDate {
