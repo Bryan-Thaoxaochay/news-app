@@ -31,9 +31,11 @@ function FavButton({ title, url, author }) {
 
     function deleteOnClick(event, id) {
         event.preventDefault();
-        console.log(event)
-        console.log(id)
-        setStarRender(current => !current)
+        // console.log(event)
+        // console.log(id)
+        API.deleteSavedArticles(id)
+        .then(setStarRender(current => !current))
+        .catch(err => console.log(err.response.data));
 
     }
 
