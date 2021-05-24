@@ -41,7 +41,7 @@ function Search() {
                 type="submit"
                 onClick={handleOnClick}
             >
-                Search
+                search
         </button>
         </form>
     )
