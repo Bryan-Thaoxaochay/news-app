@@ -4,7 +4,7 @@
     color:white;
 }
 
-.card-header{
+.articleHeader{
     width:100;
     background-color:#256077;
 }
@@ -53,3 +53,4 @@
 #artList{
     padding-left:0px;
 }
+

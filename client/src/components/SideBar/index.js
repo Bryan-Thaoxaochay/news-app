@@ -49,7 +49,10 @@ const [category] = useState(categories);
 
 return (
     <div className="sidebar-sticky">
-        <ul id="catList">
+        <div className="card" id="catList">
+            <div className="card-header catHeader">
+                <h5>Categories</h5>
+            </div>
             {category.map(categoryElement => (
                 <li className="categorySearch" >
                     <button
@@ -64,7 +67,7 @@ return (
                     </button>
                 </li>
             ))}
-        </ul>
+        </div>
     </div>
 )
 };
