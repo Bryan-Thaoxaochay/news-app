@@ -24,6 +24,11 @@ const articleSchema = new Schema({
     type: String,
     required: true,
     unique: false
+  }, 
+  image: {
+    type: String,
+    required: false,
+    unique: false
   }
 })
 

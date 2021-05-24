@@ -49,7 +49,12 @@ function CategoryResults() {
                                             </h7>
                                             )}          
                                             <p className="card-text text-start text-break artText">{article.description}..</p>
-                                            <FavButton title={article.title} url={article.url} author={article.author}/> 
+                                            <FavButton 
+                                            title={article.title} 
+                                            url={article.url} 
+                                            author={article.author}
+                                            image={article.urlToImage}
+                                            /> 
                                     </div>                              
                                     </div>
                                     </Container>
