@@ -5,7 +5,7 @@ import API from "../../utils/API"
 import UserContext from "../../utils/UserContext"
 import "./style.css"
 
-function FavButton({ title, url, author }) {
+function FavButton({ title, url, author, image }) {
     const { user, isAuthenticated } = useAuth0();
     const [starRender, setStarRender] = useState(false);
     const [savedArticles, setSavedArticles] = useState();
@@ -14,13 +14,14 @@ function FavButton({ title, url, author }) {
         loadArticles()
     }, [])
 
-    function saveOnClick(event, title, url, author) {
+    function saveOnClick(event, title, url, author, image) {
         event.preventDefault();
         API.saveArticles({
             user: user.name,
             title: title,
             url: url,
             author: author,
+            image: image
         })
             .then(console.log("successfully saved article"))
             .then(setStarRender(current => !current))
@@ -60,7 +61,7 @@ function FavButton({ title, url, author }) {
                     <button
                         type="button"
                         className="btn btn-link star"
-                        onClick={(event) => saveOnClick(event, title, url, author)}
+                        onClick={(event) => saveOnClick(event, title, url, author, image)}
                     >
                         Save Article
                     </button>
