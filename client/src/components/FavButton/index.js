@@ -61,7 +61,7 @@ function FavButton({ title, url, author }) {
                             <button
                                 type="button"
                                 className="btn btn-link"
-                                onClick={(event) => deleteOnClick(event)}
+                                // onClick={(event) => deleteOnClick(event)}
                             >
                                 <StarFill />
                             </button>
