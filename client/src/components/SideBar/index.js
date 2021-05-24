@@ -45,8 +45,11 @@ function SideBar() {
 const [category] = useState(categories);
 
 return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 sidebar-sticky" style={{ "width": '280px' }}>
-        <ul>
+    <div className="sidebar-sticky">
+        <div className="card" id="catList">
+            <div className="card-header catHeader">
+                <h5>Categories</h5>
+            </div>
             {category.map(categoryElement => (
                 <li className="categorySearch">
                     <button
@@ -61,7 +64,7 @@ return (
                     </button>
                 </li>
             ))}
-        </ul>
+        </div>
     </div>
 )
 };
