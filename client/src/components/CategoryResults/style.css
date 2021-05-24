@@ -1,14 +1,43 @@
-.title {
+.title{
     display:inline-block;
-    width:70%;
+    width:100%;
     vertical-align:top;
+}
+
+.articlesDiv{
+    border:none;
+    padding-left:0px;
+    padding-right:10%;
+}
+
+.article{
+    margin-top:10px;
+    padding:0px;
+    border:none;
+    min-height:200px;
 }
 
 .articleImg{
-    height:30%;
+    display:inline-block;
+    height:100%;
     width:30%;
 }
 
+.articlesCard{
+    border-radius:8px;
+    height:100%;
+}
+
 .authorDate {
+    display:inline-block;
     vertical-align:top;
+}
+
+.artText{   
+    float:right;
+}
+
+.card-body{
+    padding:0px;
+    height:100%;
 }
