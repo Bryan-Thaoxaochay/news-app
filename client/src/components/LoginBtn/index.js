@@ -6,7 +6,9 @@ function LoginButton() {
 
     return (
         !isAuthenticated && (
+          
             <button className="login-btn" onClick={() => loginWithRedirect()}>Login</button>
+
         )
     );
 };

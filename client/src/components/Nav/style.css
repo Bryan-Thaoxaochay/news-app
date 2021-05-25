@@ -2,6 +2,7 @@
     font-size: large;
     margin: 0px 15px
 }
+
 .image {
 text-align: center;
 top:  8.5px;
@@ -9,5 +10,11 @@ bottom: 0px;
 left: 137px;
 position: relative;
 border-radius: 5px;
+}
+
+
+.navbar {
+    height:12%;
+    background-color:#256077;
 }
 
