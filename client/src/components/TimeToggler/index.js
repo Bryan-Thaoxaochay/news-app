@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CaretLeftFill, CaretRightFill } from 'react-bootstrap-icons';
+import SearchContext from "../../utils/SearchContext";
+import ArticleContext from "../../utils/ArticleContext";
 import "./style.css"
 
 function TimeToggler() {
+    const {articles, setArticles} = useContext(ArticleContext)
+    const {search, setSearch} = useContext(SearchContext);
+    console.log(search)
+    console.log(articles)
 
     let timeFrames = [{
         timeFrame: "Today",
