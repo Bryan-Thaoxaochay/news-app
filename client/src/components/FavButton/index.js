@@ -32,18 +32,15 @@ function FavButton({ title, url, author, image }) {
 
     function deleteOnClick(event, id) {
         event.preventDefault();
-        // console.log(event)
-        // console.log(id)
         API.deleteSavedArticles(id)
-        .then(setStarRender(current => !current))
-        .catch(err => console.log(err.response.data));
+            .then(setStarRender(current => !current))
+            .catch(err => console.log(err.response.data));
 
     }
 
     function loadArticles() {
         API.getSavedArticles()
-            .then(res => setSavedArticles(res.data))
-        // .then(console.log(savedArticles))
+            .then(res => setSavedArticles(res.data));
     }
 
 
@@ -63,7 +60,7 @@ function FavButton({ title, url, author, image }) {
                         className="btn btn-link star"
                         onClick={(event) => saveOnClick(event, title, url, author, image)}
                     >
-                        Save Article
+                        <Star />
                     </button>
                 ) : (
                     <StarFill />
