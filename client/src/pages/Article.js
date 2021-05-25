@@ -13,23 +13,21 @@ function Article() {
 
     useEffect(() => {
         loadArticles()
-    }, [savedArticles])
+    });
 
     function loadArticles() {
         API.getSavedArticles()
             .then(res => setSavedArticles(res.data))
             // .then(console.log(savedArticles))
             .catch(err => console.log(err));
-    }
+    };
 
     function deleteSavedArticles(id) {
         API.deleteSavedArticles(id)
             .then(res => loadArticles())
             .catch(err => console.log(err));
-    }
+    };
 
-
-    console.log(user)
 
     return (
         isAuthenticated && (
@@ -52,7 +50,7 @@ function Article() {
                                     ))}
                                 </ul>
                             ) : (
-                                <h3>{user.name} has not saved any articles</h3>
+                                <h4>{user.name} has not saved any articles</h4>
                             )}
                         </Jumbotron>
                     </Col>
