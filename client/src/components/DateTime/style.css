@@ -1,8 +1,7 @@
 .moment {
-    position: relative;
-    top: -45px;
-    right: 100px;
-    left: -15px;
+    position:absolute;
+    color:white;
     font-size: 15px;
-
+    top:20%;
+    margin-left:5px;
 }
