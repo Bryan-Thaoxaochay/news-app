@@ -4,17 +4,18 @@
 }
 
 .image {
-text-align: center;
-top:  8.5px;
-bottom: 0px;
-left: 137px;
-position: relative;
 border-radius: 5px;
+height:100%;
 }
 
-
 .navbar {
-    height:12%;
-    background-color:#256077;
+    padding-top:0px;
+    padding-bottom:0px;
+    height:10%;
+    background-color:#1e4258;
+}
+
+#navInfo{
+    width:20%;
 }
 
