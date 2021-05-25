@@ -1,6 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CaretLeftFill, CaretRightFill } from 'react-bootstrap-icons';
+import moment from "react-moment";
 import "./style.css"
+
+
+//gets date every 10 seconds
+function dateTracker() {
+    var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    console.log(date);
+}
+
+setInterval(dateTracker, 10000)
 
 function TimeToggler() {
 
