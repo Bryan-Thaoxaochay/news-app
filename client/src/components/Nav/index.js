@@ -11,7 +11,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div id="navInfo">
-        <img className="img-fluid" src= "assets/logo.png" height= "90px" width= "90px"></img>
+        <img className="img-fluid" src= "assets/logo.png" height= "75px" width= "75px"></img>
         <DateTime />
         <LoginButton></LoginButton>
         <LogoutButton></LogoutButton>
