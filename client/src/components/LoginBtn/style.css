@@ -1,4 +1,3 @@
-
 .login-btn {
     background-color: #494B68;
     color: white;
@@ -10,4 +9,5 @@
 }
 .login-btn:hover {
     background-color: #256077;
+    border-color: magenta;
 }

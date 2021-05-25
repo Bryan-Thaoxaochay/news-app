@@ -74,6 +74,7 @@ li.bottomToggleElement:hover {
     cursor: pointer;
     text-decoration: underline;
     background-color:#494b68;
+    border-color: magenta;
 }
 
 .bottomActive {
