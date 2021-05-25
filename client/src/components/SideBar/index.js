@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import {Container} from "../Grid";
 //import ArticleCategory from "../../utils/ArticleCategory";
 import CategoryContext from "../../utils/CategoryContext";
+import ArticlesBtn from "../ArticlesBtn"
 import "./style.css"
 
 
@@ -64,6 +65,7 @@ return (
                     </button>
                 </li>
             ))}
+            <ArticlesBtn />
         </div>
     </div>
 )
