@@ -21,7 +21,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/login" component={SignupLogin} />
-            <Route exact path="/article" component={Article} />
+            <Route exact path="/saved-articles" component={Article} />
           </Switch>
         </CategoryContext.Provider>
         </ArticleContext.Provider>
