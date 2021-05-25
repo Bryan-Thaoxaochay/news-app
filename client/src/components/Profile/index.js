@@ -4,7 +4,7 @@ import API from '../../utils/API';
 
 function Profile() {
     const { user, isAuthenticated } = useAuth0();
-    const { users, setUsers } = useState();
+    const { users, setUsers } = useState("");
 
     useEffect(() => {
         checkUser()
@@ -12,19 +12,20 @@ function Profile() {
 
     function checkUser() {
         API.getUsers()
-            .then(res => setUsers(res.data))
+            .then(res => setUsers(res))
             .then(() => {
                 for (let i = 0; i < users.length; i++) {
                     if (JSON.stringify(user.sub) === users.auth) {
                         console.log("User already exists.")
                     } else {
-                        userData = {
+                        let userData = {
                             name: user.name,
                             email: user.email,
                             auth: user.sub,
                             date: new Date(Date.now())
                         }
                         API.createUser(userData)
+                        console.log(userData)
                     }
                 }
             })
