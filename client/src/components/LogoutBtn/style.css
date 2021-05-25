@@ -4,3 +4,7 @@
     border-color: black;
     border-radius: 5px;
 }
+.logout-btn:hover {
+    background-color: #256077;
+    border-color: magenta;
+}

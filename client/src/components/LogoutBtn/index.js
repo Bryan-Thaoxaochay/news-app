@@ -7,7 +7,7 @@ function LogoutButton() {
 
     return (
         isAuthenticated && (
-            <button classname="logout-btn" onClick={() => logout({ returnTo: "https://news-app-5.herokuapp.com/"})}>Log Out</button>
+            <button className="logout-btn" onClick={() => logout({ returnTo: "https://news-app-5.herokuapp.com/"})}>Log Out</button>
         )
     );
 };
