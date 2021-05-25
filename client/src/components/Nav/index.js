@@ -10,14 +10,12 @@ import { TimeToggler } from "../TimeToggler";
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div className="img-fluid"><img src= "assets/logo.png" height= "90px" width= "90px"></img></div>
-      <a className="navbar-brand" href="./">
-      </a>
-      <Container content navInfo>
-      <DateTime />
-      <LoginButton></LoginButton>
-      <LogoutButton></LogoutButton>
-      </Container>
+      <div id="navInfo">
+        <img className="img-fluid" src= "assets/logo.png" height= "90px" width= "90px"></img>
+        <DateTime />
+        <LoginButton></LoginButton>
+        <LogoutButton></LogoutButton>
+      </div>
       <TimeToggler />
       <Search />
     </nav>
@@ -26,3 +24,7 @@ function Nav() {
 
 export default Nav;
 
+/* 
+      <a className="navbar-brand" href="./">
+      </a>
+*/

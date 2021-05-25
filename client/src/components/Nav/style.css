@@ -1,21 +1,20 @@
+img {
+    border-radius:5px;
+}
+
 .navbar-brand {
     font-size: large;
     margin: 0px 15px
 }
 
-.image {
-border-radius: 5px;
-height:100%;
-}
-
 .navbar {
-    padding-top:0px;
-    padding-bottom:0px;
+    padding:0px;
     height:10%;
     background-color:#1e4258;
 }
 
-#navInfo{
-    width:20%;
+#navInfo {
+    height:100%;
+    width:30%;
 }
 
