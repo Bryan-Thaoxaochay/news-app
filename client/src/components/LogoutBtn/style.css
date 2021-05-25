@@ -1,10 +1,6 @@
-
-.login-btn {
+.logout-btn {
     background-color: #494B68;
     color: white;
     border-color: black;
     border-radius: 5px;
-}
-.login-btn:hover {
-    background-color: #256077;
 }

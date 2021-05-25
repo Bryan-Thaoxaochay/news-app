@@ -1,3 +1,7 @@
-.button {
-    background-color: pink;
+.btn-success {
+    background-color: #494B68;
+    border-color: #022140;
+}
+.btn-success:hover {
+    background-color: #256077;;;
 }
