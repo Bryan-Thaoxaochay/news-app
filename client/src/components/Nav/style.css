@@ -12,3 +12,9 @@ position: relative;
 border-radius: 5px;
 }
 
+
+.navbar {
+    height:12%;
+    background-color:#256077;
+}
+

@@ -6,4 +6,5 @@
 }
 .login-btn:hover {
     background-color: #256077;
+    border-color: magenta;
 }
