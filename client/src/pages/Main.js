@@ -17,7 +17,7 @@ const Main = () => {
         </Col>
       </Row>
       <Row botRow>
-        <Col size="2">
+        <Col size="2" className="side-Bar">
           <Container fluid content>
             <SideBar/>
           </Container>
