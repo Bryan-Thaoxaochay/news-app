@@ -65,7 +65,7 @@ function Article() {
                 </Row>
                 <Row>
                     <Col size="md-2">
-                        <Link to="/">← Back to Homepage</Link>
+                        <Link to="/">← Back to Articles Search</Link>
                     </Col>
                 </Row>
             </Container>
