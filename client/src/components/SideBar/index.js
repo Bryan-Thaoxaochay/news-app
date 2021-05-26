@@ -52,12 +52,7 @@ return (
         <Row>
             <div className="card" id="timeBar">
                 <Container fluid content>
-                    <Row half>
-                    <DateTime />
-                    </Row>                    
-                    <Row half>
-                    <TimeToggler/> 
-                    </Row>
+                    <TimeToggler/>
                 </Container>
             </div>
         </Row>
