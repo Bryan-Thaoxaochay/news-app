@@ -43,14 +43,6 @@ export default {
 
   deleteSavedArticles: function(id) {
     return axios.delete('/api/users/' + id)
-  },
-
-  saveComment: function(comment) {
-    return axios.post("/api/discussion", comment)
-  },
-
-  getSavedComments: function() {
-    return axios.get('/api/discussion')
   }
 
   // // Gets all posts
