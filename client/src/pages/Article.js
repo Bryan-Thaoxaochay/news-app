@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import Jumbotron from "../components/Jumbotron";
 import DeleteBtn from "../components/DeleteBtn";
-// import Discussion from "../components/Discussion";
 import API from "../utils/API";
 
 function Article() {
@@ -30,7 +29,7 @@ function Article() {
             .catch(err => console.log(err));
     };
 
-    console.log(user)
+
     return (
         isAuthenticated && (
             <Container fluid>
@@ -53,7 +52,7 @@ function Article() {
                                                     saved by {article.user}, on {article.date}.
                                             </h7>
                                             </h5>
-                                            {/* <Discussion /> */}
+      
                                         </div>
                                     ))}
                                 </ul>
@@ -65,7 +64,7 @@ function Article() {
                 </Row>
                 <Row>
                     <Col size="md-2">
-                        <Link to="/">← Back to Articles Search</Link>
+                        <Link to="/">← Back to Homepage</Link>
                     </Col>
                 </Row>
             </Container>
