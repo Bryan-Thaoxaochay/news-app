@@ -1,12 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import ArticleContext from "../../utils/ArticleContext";
+import SearchContext from "../../utils/SearchContext";
 import "./style.css";
 require('dotenv').config();
 
 
 function Search() {
 
-    const [search, setSearch] = useState();
+    const {search, setSearch} = useContext(SearchContext);
     const {articles, setArticles} = useContext(ArticleContext)
 
     
@@ -32,6 +33,7 @@ function Search() {
         <form className="d-flex">
             <input
                 className="form-control me-2"
+                id="search-input"
                 value={search}
                 onChange={handleInputChange}
                 placeholder="Search"

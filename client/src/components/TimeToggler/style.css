@@ -51,12 +51,24 @@ div#Year {
 }
 
 ul.bottomToggler {
-    margin-left: -90px;
+    margin-left: -68px;
 }
 
 li.bottomToggleElement::selection {
     color: none;
     background: none;
+}
+
+.bottomActive#Week {
+    padding-left: 2px;
+}
+
+.bottomActive#Month {
+    padding-left: 2px;
+}
+
+.bottomActive#Month ~ #Week {
+    padding-left: 7px;
 }
 
 li.bottomToggleElement::-moz-selection {
@@ -67,13 +79,12 @@ li.bottomToggleElement::-moz-selection {
 li.bottomToggleElement {
     position: static;
     display: inline;
-    margin-left: 15px;
+    margin-left: 16px;
 }
 
 li.bottomToggleElement:hover {
     cursor: pointer;
-    text-decoration: underline;
-    background-color:#494b68;
+    color: rgb(250, 195, 158);
 }
 
 .bottomActive {
