@@ -16,6 +16,8 @@ router.get('/category/:category', (req, res) => {
     res.send(paramsURL)
 })
 
+//&from=${}&to=${}
+
 router.get('/search/:search', (req, res) => {
     const searchURL = `https://newsapi.org/v2/everything?q=${req.params.search}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     axios.get(searchURL).then(results => {
@@ -23,12 +25,14 @@ router.get('/search/:search', (req, res) => {
     })
 })
 
+
 router.get('/topheadlines/:category', (req, res) => {
     const searchURL = `https://newsapi.org/v2/top-headlines?language=en&category=${req.params.category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
     axios.get(searchURL).then(results => {
         res.send(results.data)
     })
 })
+
 
 
 module.exports = router;

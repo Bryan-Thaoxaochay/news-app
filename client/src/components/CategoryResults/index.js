@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import {Container,} from "../Grid"
+import { Container } from "../Grid"
 import FavButton from "../FavButton";
 import './style.css'
 
@@ -25,46 +25,48 @@ function CategoryResults() {
     }
 
     return (
-            <div class="card articlesDiv">
-                    {articles ? (
-                        <ul id="artList">
-                            {articles.articles.map(article => (
-                                <li className="list-group-item article">
-                                    <Container fluid artCon>
-                                    <div className="card articlesCard">
+        <div class="card articlesDiv">
+            {articles ? (
+                <ul id="artList">
+                    {articles.articles.map(article => (
+                        <li className="list-group-item article">
+                            <Container fluid artCon>
+                                <div className="card articlesCard">
                                     <h5 className="card-header articleHeader">
-                                            <a  className="text-break title" href={article.url}>
+                                        <FavButton
+                                            title={article.title}
+                                            url={article.url}
+                                            author={article.author}
+                                            image={article.urlToImage}
+                                        />
+                                        <a className="text-break title" href={article.url}>
                                             {article.title}
-                                            </a>
+                                        </a>
                                     </h5>
+
                                     <div class="card-body">
-                                            <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
-                                            {article.author ? (
+                                        <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
+                                        {article.author ? (
                                             <h7 className="text-break authorDate">
                                                 {article.author}, {article.publishedAt}.
                                             </h7>
-                                            ) : (
+                                        ) : (
                                             <h7 className="text-break authorDate">
                                                 {article.publishedAt}.
                                             </h7>
-                                            )}          
-                                            <p className="card-text text-start text-break artText">{article.description}..</p>
-                                            <FavButton 
-                                            title={article.title} 
-                                            url={article.url} 
-                                            author={article.author}
-                                            image={article.urlToImage}
-                                            /> 
-                                    </div>                              
+                                        )}
+                                        <p className="card-text text-start text-break artText">{article.description}..</p>
+
                                     </div>
-                                    </Container>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (                        
-                        <h3></h3>
-                    )}
-            </div>
+                                </div>
+                            </Container>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <h3></h3>
+            )}
+        </div>
     );
 }
 

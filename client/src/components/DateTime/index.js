@@ -4,13 +4,15 @@ import 'moment-timezone';
 import "./style.css";
 
 
-function DateTime() {
+export default class MyComponent extends React.Component {
+    
+    today = Date();
 
-    const dateToFormat = new Date();
-    return (
-        <Moment className= "moment"interval={60000} format='LLLL'>{dateToFormat}</Moment>
-    );
+    render() {
+        return (
+            <Moment interval={1000} class="moment" format='LLL'>
+                {this.today}
+            </Moment>
+        );
+    }
 }
-
-
-export default DateTime;

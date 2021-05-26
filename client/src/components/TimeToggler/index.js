@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CaretLeftFill, CaretRightFill } from 'react-bootstrap-icons';
+import SearchContext from "../../utils/SearchContext";
+import ArticleContext from "../../utils/ArticleContext";
+import moment from 'moment';
 import "./style.css"
 
 function TimeToggler() {
@@ -13,12 +16,75 @@ function TimeToggler() {
     }, {
         timeFrame: "Month",
         active: false,
-    }, {
-        timeFrame: "Year",
-        active: false,
     }]
 
     let [whatTime, setWhatTime] = useState(timeFrames);
+    let [currentDate, setDate] = useState();
+    const { articles, setArticles } = useContext(ArticleContext)
+    const { search, setSearch } = useContext(SearchContext);
+
+    console.log(search)
+    console.log(articles)
+
+    
+
+    //figuring out what time was selected and getting current date before api call
+    function dateTracker(selectedTime) {
+
+        var today = new Date(),
+            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        setDate(date);
+
+        console.log(currentDate);
+
+        switch (selectedTime) {
+            case "Today":
+                articleSearchToday();
+                break;
+            case "Week":
+                articleSearchWeek();
+                break;
+            case "Month":
+                articleSearchMonth();
+                break;
+            case "Year":
+                break;
+            default:
+            
+        }
+    }
+
+    //setting up to/from for specified time perameter
+    function articleSearchToday() {
+
+        fetch('/api/articles/search/' + search + "&from=" + currentDate + "&to=" + currentDate)
+            .then(res => res.json())
+            .then(result => setArticles(result))
+            .catch(err => console.log(err));
+    }
+
+    function articleSearchWeek() {
+
+        let fromDate = moment().subtract(1, 'weeks').format("YYYY-MM-DD");
+        console.log(currentDate);
+        console.log(fromDate);
+
+        fetch('/api/articles/search/' + search + "&from=" + fromDate + "&to=" + currentDate)
+            .then(res => res.json())
+            .then(result =>setArticles(result))
+            .catch(err => console.log(err));
+    };
+
+    function articleSearchMonth() {
+
+        let fromDate = moment().subtract(1, 'months').format("YYYY-MM-DD");
+        console.log(fromDate);
+
+        fetch('/api/articles/search/' + search + "&from=" + fromDate + "&to=" + currentDate)
+            .then(res => res.json())
+            .then(result => setArticles(result))
+            .catch(err => console.log(err));
+    }
 
     //function for handling click of bottom bar
     function handleTimeToggle(event) {
@@ -40,6 +106,7 @@ function TimeToggler() {
             }
         })
         console.log(newTimeArray)
+        dateTracker(selectedTime);
         setWhatTime(newTimeArray)
     };
 
@@ -47,6 +114,7 @@ function TimeToggler() {
     function handleLeftArrowClick() {
         let countForActiveTime = 0;
         let activeFound;
+        let selectedTime;
 
         whatTime.map((time) => {
             if (time.active === true) {
@@ -69,6 +137,7 @@ function TimeToggler() {
                     active: true
                 };
                 countForActiveTime += 1;
+                selectedTime = time.timeFrame;
                 return updatedObject;
             } else {
                 const updatedObject = {
@@ -80,8 +149,8 @@ function TimeToggler() {
             }
 
         })
-
-        setWhatTime(newTimeArray)
+        setWhatTime(newTimeArray);
+        dateTracker(selectedTime);
     };
 
 
@@ -90,14 +159,16 @@ function TimeToggler() {
 
         let countForActiveTime = 0;
         let activeFound = false;
+        let selectedTime;
 
         let newTimeArray = whatTime.map((time) => {
             if (time.active === true) {
-                if (countForActiveTime === 3) {
+                if (countForActiveTime === 2) {
                     const updatedObject = {
                         ...time,
                         active: true
                     };
+                    selectedTime = time.timeFrame;
                     return updatedObject;
                 } else {
                     const updatedObject = {
@@ -113,6 +184,7 @@ function TimeToggler() {
                     ...time,
                     active: true
                 };
+                selectedTime = time.timeFrame;
                 countForActiveTime += 1;
                 activeFound = false;
                 return updatedObject;
@@ -125,6 +197,7 @@ function TimeToggler() {
                 return updatedObject;
             }
         })
+        dateTracker(selectedTime);
         setWhatTime(newTimeArray)
     };
 

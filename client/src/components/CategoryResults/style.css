@@ -42,7 +42,8 @@
     float:left;
     font-weight:bold;
     vertical-align:top;
-    width:68%;
+    width: 100%;
+    padding-left: 10px;
     margin-bottom:5px;
 }
 
