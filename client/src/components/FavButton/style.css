@@ -1,3 +1,23 @@
 .star {
-    color:blue
+    color:gold !important;
+    width: max-content;
+    float:right;
+    border:none !important;
+    outline: none !important;
+}
+
+.star:hover {
+    color:orange !important;
+}
+
+.starFilled {
+    color:orange;
+    width: max-content;
+    float:right;
+    border:none !important;
+    outline: none !important;
+}
+
+.starFilled:hover {
+    color: white;
 }

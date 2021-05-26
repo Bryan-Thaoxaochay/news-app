@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
-import { Container } from "../Grid"
+import { Col, Row, Container } from "../Grid";
 import FavButton from "../FavButton";
 import './style.css'
 
@@ -25,9 +25,22 @@ function CategoryResults() {
     }
 
     function articleDateGet(publicationDate) {
-        console.log(publicationDate);
         let concatDate = publicationDate.substring(0, 10);
         return concatDate;
+    }
+
+    function getTitle(title) {
+        
+        let t = title.substr(0, title.lastIndexOf("-"));
+        return t
+    }
+
+    function getArticleDesc(article) {
+        if (article.length === 0) {
+            return "The contents of this article were not provided"
+        } else {
+            return article;
+        }
     }
 
 
@@ -41,30 +54,40 @@ function CategoryResults() {
                             <Container fluid artCon>
                                 <div className="card articlesCard">
                                     <h5 className="card-header articleHeader">
-                                        <FavButton
-                                            title={article.title}
-                                            url={article.url}
-                                            author={article.author}
-                                            image={article.urlToImage}
-                                        />
-                                        <a className="text-break title" href={article.url}>
-                                            {article.title}
-                                        </a>
+                                        <Row>
+                                            <Col size="11">
+                                                <div className="title">
+                                                <a className="text-break" href={article.url}>
+                                                    {getTitle(article.title)}
+                                                </a>
+                                                </div>
+                                            </Col>
+                                            <Col size="1" >
+                                                <FavButton
+                                                    title={article.title}
+                                                    url={article.url}
+                                                    author={article.author}
+                                                    image={article.urlToImage}
+
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <h7 className="text-break card-date">
+                                            {articleDateGet(article.publishedAt)}  •  {article.source.name}
+                                        </h7>
                                     </h5>
 
                                     <div class="card-body">
                                         <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
+
+                                        <p className="card-text text-start text-break artText">{getArticleDesc(article.description)}...</p>
                                         {article.author ? (
                                             <h7 className="text-break authorDate">
-                                                {article.author}, {articleDateGet(article.publishedAt)}
+                                                By: {article.author}
                                             </h7>
                                         ) : (
-                                            <h7 className="text-break authorDate">
-                                                {articleDateGet(article.publishedAt)}
-                                            </h7>
+                                            <h7 className="text-break authorDate">By: <i>author not provided</i></h7>
                                         )}
-                                        <p className="card-text text-start text-break artText">{article.description}..</p>
-
                                     </div>
                                 </div>
                             </Container>

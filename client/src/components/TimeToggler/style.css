@@ -16,8 +16,10 @@
 }
 
 .timeTogglerComponent {
-    margin: 0px 0px 0px 15%;
     color: aliceblue;
+    position: fixed;
+    width: 50%;
+    margin: 0 auto;
 }
 
 div.toggledTime {
@@ -67,7 +69,7 @@ li.bottomToggleElement::selection {
     padding-left: 2px;
 }
 
-.bottomActive#Month ~ #Week {
+.bottomActive#Month~#Week {
     padding-left: 7px;
 }
 
@@ -96,4 +98,3 @@ li.bottomToggleElement:hover {
     font-weight: bold;
     color: rgb(245, 138, 67);
 }
-

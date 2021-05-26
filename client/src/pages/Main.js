@@ -17,7 +17,7 @@ const Main = () => {
         </Col>
       </Row>
       <Row botRow>
-        <Col size="3">
+        <Col size="3" className="side-Bar">
             <SideBar/>
         </Col>
           <Col size="9">
