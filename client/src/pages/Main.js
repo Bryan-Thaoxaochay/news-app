@@ -17,10 +17,8 @@ const Main = () => {
         </Col>
       </Row>
       <Row botRow>
-        <Col size="2">
-          <Container fluid content>
+        <Col size="3">
             <SideBar/>
-          </Container>
         </Col>
           <Col size="9">
             <Container fluid content>

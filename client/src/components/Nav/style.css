@@ -1,4 +1,4 @@
-.img-fluid {
+.logo {
     width:90px;
     height:90px;
     border-radius:5px;
@@ -20,12 +20,21 @@
     width:30%;
 }
 
-
 #loginDiv {
     height:100%;
     width: 20%;  
     left:100px;
     position:absolute;
     bottom:10%;
+}
+
+#navSplit {
+    height:100%;
+    width:10%;
+}
+
+#navSearch {
+    height:100%;
+    width:60%;
 }
 

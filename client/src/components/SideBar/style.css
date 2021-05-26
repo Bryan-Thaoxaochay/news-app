@@ -5,6 +5,7 @@
     border-bottom:1px solid #494b68;
     color:white;
     text-align: center;
+
 }
 
 .categorySearch {
@@ -34,7 +35,8 @@
 }
 
 #catList {
-    width:100%;
+    min-width:inherit;
+    max-width:inherit;
     border-radius:8px;
     border:2px solid #022140;
     background-color:#256077;
