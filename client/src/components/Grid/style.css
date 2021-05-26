@@ -14,6 +14,15 @@
     padding:0px;
 }
 
+.sidebar {
+    position:-webkit-fixed;
+    position:fixed;
+    padding:0px;
+    display:flex;
+    width:300px;
+    height:100%;
+}
+
 .artCon {
     height:100%;
     display:inline-block;
@@ -26,4 +35,8 @@
 
 .botRow {
     height:90%;
+}
+
+.half {
+    height:50%;
 }
