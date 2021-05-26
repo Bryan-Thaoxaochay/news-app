@@ -51,13 +51,9 @@ return (
     <Container sideBar>
         <Row>
             <div className="card" id="timeBar">
-                <Container fluid content className="side-Bar">
-                    <Row half>
-                    <DateTime />
-                    </Row>                    
-                    <Row half>
-                    <TimeToggler/> 
-                    </Row>
+                <Container fluid content>
+                    <TimeToggler/>
+
                 </Container>
             </div>
         </Row>

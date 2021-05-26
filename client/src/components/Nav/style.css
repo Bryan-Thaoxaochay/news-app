@@ -1,4 +1,6 @@
-img {
+.img-fluid {
+    width:90px;
+    height:90px;
     border-radius:5px;
 }
 
@@ -16,5 +18,14 @@ img {
 #navInfo {
     height:100%;
     width:30%;
+}
+
+
+#loginDiv {
+    height:100%;
+    width: 20%;  
+    left:100px;
+    position:absolute;
+    bottom:10%;
 }
 
