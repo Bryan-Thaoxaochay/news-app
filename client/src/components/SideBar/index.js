@@ -51,7 +51,7 @@ return (
     <Container sideBar>
         <Row>
             <div className="card" id="timeBar">
-                <Container fluid content>
+                <Container fluid content className="side-Bar">
                     <Row half>
                     <DateTime />
                     </Row>                    
@@ -62,7 +62,7 @@ return (
             </div>
         </Row>
         <Row>
-        <div className="card" id="catList">
+        <div className="sidebar-cards" id="catList">
             <div className="card-header catHeader">
                 <h5>Categories</h5>
             </div>

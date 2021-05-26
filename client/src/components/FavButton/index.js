@@ -59,11 +59,21 @@ function FavButton({ title, url, author, image }) {
                         type="button"
                         className="btn btn-link star"
                         onClick={(event) => saveOnClick(event, title, url, author, image)}
+                        
                     >
-                        <Star />
+                        <Star height="27px" width="27px"/>
                     </button>
                 ) : (
-                    <StarFill />
+
+                    <button
+                        type="button"
+                        className="btn btn-link starFilled"
+                        onClick={(event) => deleteOnClick(event, title, url, author, image)}
+                        
+                    >
+                        <StarFill height="27px" width="27px"/>
+                    </button>
+                    
                     // <>
                     //     {savedArticles.map(articles => {
                     //         articles.url === url ? (

@@ -1,3 +1,6 @@
+.side-Bar {
+    position: fixed;
+}
 
 .catHeader{
     width:100%;
@@ -34,7 +37,8 @@
 }
 
 #catList {
-    width:100%;
+    position: fixed;
+    width: auto;
     border-radius:8px;
     border:2px solid #022140;
     background-color:#256077;
