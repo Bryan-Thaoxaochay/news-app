@@ -24,6 +24,14 @@ function CategoryResults() {
             .catch(err => console.log(err));
     }
 
+    function articleDateGet(publicationDate) {
+        console.log(publicationDate);
+        let concatDate = publicationDate.substring(0, 10);
+        return concatDate;
+    }
+
+
+
     return (
         <div class="card articlesDiv">
             {articles ? (
@@ -45,14 +53,14 @@ function CategoryResults() {
                                     </h5>
 
                                     <div class="card-body">
-                                        <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage}></img>
+                                        <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
                                         {article.author ? (
                                             <h7 className="text-break authorDate">
-                                                {article.author}, {article.publishedAt}.
+                                                {article.author}, {articleDateGet(article.publishedAt)}
                                             </h7>
                                         ) : (
                                             <h7 className="text-break authorDate">
-                                                {article.publishedAt}.
+                                                {articleDateGet(article.publishedAt)}
                                             </h7>
                                         )}
                                         <p className="card-text text-start text-break artText">{article.description}..</p>
