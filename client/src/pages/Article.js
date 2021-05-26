@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import Jumbotron from "../components/Jumbotron";
 import DeleteBtn from "../components/DeleteBtn";
+// import Discussion from "../components/Discussion";
 import API from "../utils/API";
 
 function Article() {
 
     const [savedArticles, setSavedArticles] = useState();
     const { user, isAuthenticated } = useAuth0();
+
 
     useEffect(() => {
         loadArticles()
@@ -28,29 +30,35 @@ function Article() {
             .catch(err => console.log(err));
     };
 
-
+    console.log(user)
     return (
         isAuthenticated && (
             <Container fluid>
                 <Row>
                     <Col size="md-10">
                         <Jumbotron>
-                            <h1>{user.nickname}'s Saved Articles</h1>
+                            {/* <h1>Discussion Board</h1> */}
+                            <h3>Welcome {user.name},</h3> 
+                            <h4>Browse these articles that other users found interesting</h4>
                             {savedArticles ? (
                                 <ul>
                                     {savedArticles.map(article => (
-                                        <li className="list-group-item">
-                                            {/* <img className="img-fluid img-thumbnail" src={article.image}></img> */}
-                                            <strong>
-                                                <a href={article.url}>{article.title}</a>
-                                            </strong>
-                                            <DeleteBtn onClick={() => deleteSavedArticles(article._id)} />
-                                        </li>
-
+                                        <div className="card">
+                                            <h5 className="card-header articleHeader">
+                                                <DeleteBtn onClick={() => deleteSavedArticles(article._id)} />
+                                                <a className="text-break title" href={article.url}>
+                                                    {article.title}
+                                                </a>
+                                                <h7 className="text-break authorDate">
+                                                    saved by {article.user}, on {article.date}.
+                                            </h7>
+                                            </h5>
+                                            {/* <Discussion /> */}
+                                        </div>
                                     ))}
                                 </ul>
                             ) : (
-                                <h4>{user.name} has not saved any articles</h4>
+                                <h4>No Saved Articles</h4>
                             )}
                         </Jumbotron>
                     </Col>
