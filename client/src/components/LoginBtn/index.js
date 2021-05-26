@@ -6,9 +6,12 @@ function LoginButton() {
 
     return (
         !isAuthenticated && (
-          
-            <button className="login-btn" onClick={() => loginWithRedirect()}>Login</button>
-
+            <div id="loginDiv">
+                <button className="login-btn" onClick={() => loginWithRedirect()}>Login</button>
+                <span className="logIcon">
+                <i className="far fa-user fa-2x"></i>
+                </span>
+            </div>
         )
     );
 };
