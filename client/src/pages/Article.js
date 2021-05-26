@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import Jumbotron from "../components/Jumbotron";
 import DeleteBtn from "../components/DeleteBtn";
-import Discussion from "../components/Discussion";
+// import Discussion from "../components/Discussion";
 import API from "../utils/API";
 
 function Article() {
@@ -30,7 +30,7 @@ function Article() {
             .catch(err => console.log(err));
     };
 
-    
+    console.log(user)
     return (
         isAuthenticated && (
             <Container fluid>
