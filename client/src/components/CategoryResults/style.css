@@ -36,8 +36,9 @@
     background-color: #022140;
 }
 
-.card-text {
+.artText {
     font-size: 22px;
+    padding: 10px;
 }
 
 .article {

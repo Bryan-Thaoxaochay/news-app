@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {Container, Col, Row} from "../Grid";
+
+import { Container, Col, Row } from "../Grid";
 import DateTime from "../DateTime";
 import { TimeToggler } from "../TimeToggler";
 //import ArticleCategory from "../../utils/ArticleCategory";
@@ -45,47 +46,46 @@ function SideBar() {
 
 
 
-const [category] = useState(categories);
+    const [category] = useState(categories);
 
-return (
-    <Container sideBar>
-        <Row>
-            <div className="card" id="timeBar">
-                <Container fluid content className="side-Bar">
-                    <Row half>
-                    <DateTime />
-                    </Row>                    
-                    <Row half>
-                    <TimeToggler/> 
-                    </Row>
-                </Container>
-            </div>
-        </Row>
-        <Row>
-        <div className="sidebar-cards" id="catList">
-            <div className="card-header catHeader">
-                <h5>Categories</h5>
-            </div>
-            {category.map(categoryElement => (
-                <li className="categorySearch">
-                    <button
-                        type="button"
-                        className="btn btn-link category-link"
-                        id={categoryElement.name}
-                        value={categoryElement.name}
-                        onClick={e => setCategory(e.target.value)}
-                    >
-                        <img src={categoryElement.icon} className={categoryElement.name + "-icon category-icons"} height="25px" width="25px"></img>
-                        {categoryElement.name}
-                    </button>
-                </li>
-            ))}
-            <ArticlesBtn />
-        </div>
-        </Row>
-
-    </Container>
-)
+    return (
+        <Container className="sideBar">
+            <Row>
+                <div className="card" id="timeBar">
+                    <Container fluid content className="side-Bar">
+                        <Row half>
+                            <DateTime />
+                        </Row>
+                        <Row half>
+                            <TimeToggler />
+                        </Row>
+                    </Container>
+                </div>
+            </Row>
+            <Row>
+                <div className="sidebar-cards" id="catList">
+                    <div className="card-header catHeader">
+                        <h5>Categories</h5>
+                    </div>
+                    {category.map(categoryElement => (
+                        <li className="categorySearch">
+                            <button
+                                type="button"
+                                className="btn btn-link category-link"
+                                id={categoryElement.name}
+                                value={categoryElement.name}
+                                onClick={e => setCategory(e.target.value)}
+                            >
+                                <img src={categoryElement.icon} className={categoryElement.name + "-icon category-icons"} height="25px" width="25px"></img>
+                                {categoryElement.name}
+                            </button>
+                        </li>
+                    ))}
+                    <ArticlesBtn />
+                </div>
+            </Row>
+        </Container>
+    )
 };
 
 export default SideBar;
