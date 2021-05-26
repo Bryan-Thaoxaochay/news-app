@@ -10,11 +10,6 @@ const discussionSchema = new Schema({
         required: true,
         unique: false
     },
-    title: {
-        type: String,
-        required: true,
-        unique: false
-    },
     comment: {
         type: String,
         required: true,
