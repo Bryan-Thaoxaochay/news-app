@@ -92,3 +92,8 @@ li.bottomToggleElement:hover {
     color: rgb(245, 138, 67);
 }
 
+.bottomActive:hover {
+    font-weight: bold;
+    color: rgb(245, 138, 67);
+}
+

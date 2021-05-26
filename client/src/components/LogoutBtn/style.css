@@ -3,4 +3,11 @@
     color: white;
     border-color: black;
     border-radius: 5px;
+    margin-top: 37px;
+    position: absolute;
+    margin-left: 5px;
+}
+.logout-btn:hover {
+    background-color: #256077;
+    border-color: magenta;
 }
