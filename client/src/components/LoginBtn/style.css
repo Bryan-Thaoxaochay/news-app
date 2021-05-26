@@ -1,26 +1,15 @@
 .login-btn {
     position:absolute;
     left:0px;
-    background-color: #494B68;
+    background-color:rgb(245, 138, 67);
     color: white;
-    border-color: black;
-    border-radius: 5px;
+    width:80px;
     bottom:10%;
     margin-left:5px;
 }
 .login-btn:hover {
     background-color: #256077;
     border-color: magenta;
-}
-
-.logIcon {
-    position:absolute;
-    right:20%;;
-    bottom:10%;
-}
-
-.fa-user {
-    color:white;
 }
 
 #loginDiv {
