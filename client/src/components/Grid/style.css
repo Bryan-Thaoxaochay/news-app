@@ -1,6 +1,6 @@
 .content {
     height:100%;
-    padding:0px;
+    padding:1px;
 }
 
 .main {
@@ -14,12 +14,11 @@
     padding:0px;
 }
 
-.sidebar {
-    position:-webkit-fixed;
+.sideBar {
     position:fixed;
     padding:0px;
+    width:250px;
     display:flex;
-    width:300px;
     height:100%;
 }
 

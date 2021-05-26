@@ -49,16 +49,7 @@ const [category] = useState(categories);
 
 return (
     <Container sideBar>
-        <Row>
-            <div className="card" id="timeBar">
-                <Container fluid content>
-                    <TimeToggler/>
-
-                </Container>
-            </div>
-        </Row>
-        <Row>
-        <div className="sidebar-cards" id="catList">
+        <div className="card" id="catList">
             <div className="card-header catHeader">
                 <h5>Categories</h5>
             </div>
@@ -78,8 +69,6 @@ return (
             ))}
             <ArticlesBtn />
         </div>
-        </Row>
-
     </Container>
 )
 };
