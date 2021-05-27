@@ -44,10 +44,13 @@ function TimeToggler() {
     }
     //setting up to/from for specified time perameter
     function articleSearchToday() {
+        if (typeof search === undefined)
+        {
         fetch('/api/articles/search/' + search + "&from=" + currentDate + "&to=" + currentDate)
             .then(res => res.json())
             .then(result => setArticles(result))
             .catch(err => console.log(err));
+        }
     }
     function articleSearchWeek() {
         let fromDate = moment().subtract(1, 'weeks').format("YYYY-MM-DD");

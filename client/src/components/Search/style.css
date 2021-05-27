@@ -10,3 +10,7 @@
 .searchBar {
     margin: 28px;
 }
+
+#search-input {
+    z-index: 100;
+}
