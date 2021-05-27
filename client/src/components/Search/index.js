@@ -39,7 +39,7 @@ function Search() {
                 placeholder="Search"
             />
             <button
-                className="btn btn-success"
+                className="btn btn-success searchBtn"
                 type="submit"
                 onClick={handleOnClick}
             >

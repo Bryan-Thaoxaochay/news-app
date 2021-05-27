@@ -3,8 +3,8 @@
     border-color: #022140;
 }
 .btn-success:hover {
-    background-color: #256077;;;
-    border-color: magenta;
+    background-color: #256077;
+    border-color: white;
 }
 
 .searchBar {
@@ -15,4 +15,16 @@
     position:absolute;
     right:0px;
     max-width:60%;
+}
+
+.searchBtn {
+    background-color:rgb(245, 138, 67);
+}
+
+.searchBtn:hover {
+    background-color:rgb(231, 108, 26);
+}
+
+#search-input {
+    z-index: 100;
 }
