@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import ArticleContext from "../../utils/ArticleContext";
 import CategoryContext from "../../utils/CategoryContext";
 import { Col, Row, Container } from "../Grid";
-import { PencilFill } from 'react-bootstrap-icons';
+import { Person } from 'react-bootstrap-icons';
 import FavButton from "../FavButton";
 import './style.css'
 
@@ -31,9 +31,15 @@ function CategoryResults() {
     }
 
     function getTitle(title) {
+        
+        console.log(title)
+        if (title.split("-").length === 1) {
+            return title
+        } else {
+            let newtitle = title.substr(0, title.lastIndexOf("-"));
+            return newtitle
+        }
 
-        let t = title.substr(0, title.lastIndexOf("-"));
-        return t
     }
 
     function getArticleDesc(article) {
@@ -79,16 +85,16 @@ function CategoryResults() {
                                     </h5>
 
                                     <div class="card-body">
-                                        <img className="img-fluid articleImg img-thumbnail"  src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
+                                        <img className="img-fluid articleImg img-thumbnail" src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
 
                                         <p className="card-text text-start text-break artText">{getArticleDesc(article.description)}...</p>
                                         {article.author ? (
 
                                             <h7 className="text-break authorDate">
-                                                {article.author} <PencilFill />
+                                                {article.author} <Person />
                                             </h7>
                                         ) : (
-                                            <h7 className="text-break authorDate"> <i>author not provided</i> <PencilFill /></h7>
+                                            <h7 className="text-break authorDate"> <i>author not provided</i> <Person /></h7>
                                         )}
                                     </div>
                                 </div>
