@@ -29,6 +29,11 @@ function Article() {
             .catch(err => console.log(err));
     };
 
+    function articleDateGet(publicationDate) {
+        let concatDate = publicationDate.substring(0, 10);
+        return concatDate;
+    }
+
 
     return (
         isAuthenticated && (
@@ -36,35 +41,51 @@ function Article() {
                 <Row>
                     <Col size="md-10">
                         <Jumbotron>
+
                             {/* <h1>Discussion Board</h1> */}
-                            <h3>Welcome {user.name},</h3> 
+                            <h3>Welcome {user.name},</h3>
                             <h4>Browse these articles that other users found interesting</h4>
-                            {savedArticles ? (
-                                <ul>
-                                    {savedArticles.map(article => (
-                                        <div className="card">
-                                            <h5 className="card-header articleHeader">
-                                                <DeleteBtn onClick={() => deleteSavedArticles(article._id)} />
-                                                <a className="text-break title" href={article.url}>
-                                                    {article.title}
-                                                </a>
-                                                <h7 className="text-break authorDate">
-                                                    saved by {article.user}, on {article.date}.
-                                            </h7>
-                                            </h5>
-      
-                                        </div>
-                                    ))}
-                                </ul>
-                            ) : (
-                                <h4>No Saved Articles</h4>
-                            )}
+
                         </Jumbotron>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col size="md-2">
-                        <Link to="/">← Back to Homepage</Link>
+                        <Row>
+                            <Col size="md-2">
+                                <Link to="/">← Back to Home</Link>
+                            </Col>
+                        </Row>
+                        {savedArticles ? (
+                            <ul id="artList">
+                                {savedArticles.map(article => (
+                                    <li className="list-group-item article">
+                                        <Container fluid artCon>
+                                            <div className="card articlesCard">
+                                                <h5 className="card-header articleHeader">
+                                                    <Row>
+                                                        <Col size="11">
+                                                            <div className="title">
+                                                                <a className="text-break" href={article.url}>
+                                                                    {article.title}
+                                                                </a>
+                                                            </div>
+                                                        </Col>
+                                                        <Col size="1" >
+                                                            <DeleteBtn onClick={() => deleteSavedArticles(article._id)} />
+                                                        </Col>
+                                                    </Row>
+                                                </h5>
+                                                <div class="card-body">
+
+                                                    <h7 className="text-break authorDate">
+                                                        saved by {article.user}, on {articleDateGet(article.date)}
+                                                    </h7>
+                                                </div>
+                                            </div>
+                                        </Container>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <h4>No Saved Articles</h4>
+                        )}
                     </Col>
                 </Row>
             </Container>
