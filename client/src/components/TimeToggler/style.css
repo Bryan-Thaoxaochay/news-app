@@ -8,6 +8,7 @@
 
 .leftArrow {
     position: sticky;
+    margin-left:15px;
 }
 
 .rightArrow {
@@ -19,8 +20,9 @@
     top: 25px;
     right: 520px;
     color: aliceblue;
-    position: fixed;
-    width: 50%;
+    position:absolute;
+    right:30%;
+    width:30%;
     margin: 0 auto;
 }
 
@@ -55,7 +57,7 @@ div#Year {
 }
 
 ul.bottomToggler {
-    margin-left: -68px;
+    margin-left: -55px;
 }
 
 li.bottomToggleElement::selection {
@@ -100,4 +102,6 @@ li.bottomToggleElement:hover {
     font-weight: bold;
     color: rgb(245, 138, 67);
 }
-
+.togglerSizer{
+    margin-left:5px;
+}

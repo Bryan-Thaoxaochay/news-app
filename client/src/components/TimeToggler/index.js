@@ -175,6 +175,7 @@ function TimeToggler() {
     };
     return (
         < div className="timeTogglerComponent">
+            <div className="togglerSizer">
             <CaretLeftFill className="arrow leftArrow" onClick={handleLeftArrowClick} />
             {whatTime.map(timeframe => (
                 (timeframe.active) ? <div className="active toggledTime" id={timeframe.timeFrame} onClick={handleTimeToggle}>{timeframe.timeFrame}</div> : <li className="toggledTime" style={{ display: "none" }} id={timeframe.timeFrame} onClick={handleTimeToggle}></li>
@@ -185,6 +186,7 @@ function TimeToggler() {
                     (timeframe.active) ? <li className="bottomActive bottomToggleElement" id={timeframe.timeFrame} onClick={handleTimeToggle}>{timeframe.timeFrame}</li> : <li className="bottomToggleElement" id={timeframe.timeFrame} onClick={handleTimeToggle}>{timeframe.timeFrame}</li>
                 ))}
             </ul>
+            </div>
         </div >
     )
 };
