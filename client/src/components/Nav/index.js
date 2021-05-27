@@ -24,13 +24,11 @@ class Nav extends Component {
     window.removeEventListener("resize", this.updateSizeState);
   };
   updateSizeState() {
-    this.setState({ isMobile: window.innerWidth < 900 });
+    this.setState({ isMobile: window.innerWidth < 980 });
   };
 
   render() {
     const isMobile = this.state.isMobile;
-
-
     return (
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
         <div id="navInfo">

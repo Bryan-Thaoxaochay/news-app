@@ -9,4 +9,7 @@
 
 .searchBar {
     margin: 28px;
+    position:absolute;
+    right:0px;
+    width: 40%;
 }

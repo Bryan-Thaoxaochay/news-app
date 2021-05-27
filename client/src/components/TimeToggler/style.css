@@ -19,8 +19,9 @@
     top: 25px;
     right: 520px;
     color: aliceblue;
-    position: fixed;
-    width: 50%;
+    position:absolute;
+    right:30%;
+    width:30%;
     margin: 0 auto;
 }
 
