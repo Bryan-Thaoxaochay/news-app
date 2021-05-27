@@ -205,6 +205,7 @@ function TimeToggler() {
     return (
 
         < div className="timeTogglerComponent">
+            <div className="togglerSizer">
             <CaretLeftFill className="arrow leftArrow" onClick={handleLeftArrowClick} />
 
             {whatTime.map(timeframe => (
@@ -218,6 +219,7 @@ function TimeToggler() {
                     (timeframe.active) ? <li className="bottomActive bottomToggleElement" id={timeframe.timeFrame} onClick={handleTimeToggle}>{timeframe.timeFrame}</li> : <li className="bottomToggleElement" id={timeframe.timeFrame} onClick={handleTimeToggle}>{timeframe.timeFrame}</li>
                 ))}
             </ul>
+            </div>
         </div >
     )
 };

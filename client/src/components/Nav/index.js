@@ -24,7 +24,7 @@ class Nav extends Component {
     window.removeEventListener("resize", this.updateSizeState);
   };
   updateSizeState() {
-    this.setState({ isMobile: window.innerWidth < 980 });
+    this.setState({ isMobile: window.innerWidth < 768 });
   };
 
   render() {

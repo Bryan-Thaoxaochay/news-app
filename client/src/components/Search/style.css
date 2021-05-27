@@ -8,8 +8,11 @@
 }
 
 .searchBar {
-    margin: 28px;
+    margin-top:28px;
+    margin-right:28px;
+    margin-left:0px;
+    margin-bottom:28px;
     position:absolute;
     right:0px;
-    width: 40%;
+    max-width:60%;
 }
