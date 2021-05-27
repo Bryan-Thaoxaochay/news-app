@@ -30,7 +30,7 @@ function Search() {
 
 
     return (
-        <form className="d-flex">
+        <form className="d-flex searchBar">
             <input
                 className="form-control me-2"
                 id="search-input"

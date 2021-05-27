@@ -79,7 +79,7 @@ function CategoryResults() {
                                     </h5>
 
                                     <div class="card-body">
-                                        <img className="img-fluid articleImg img-thumbnail" height="400px" src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
+                                        <img className="img-fluid articleImg img-thumbnail"  src={article.urlToImage ? article.urlToImage : "./assets/placehold.png"}></img>
 
                                         <p className="card-text text-start text-break artText">{getArticleDesc(article.description)}...</p>
                                         {article.author ? (

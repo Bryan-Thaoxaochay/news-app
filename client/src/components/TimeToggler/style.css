@@ -16,6 +16,8 @@
 }
 
 .timeTogglerComponent {
+    top: 25px;
+    right: 520px;
     color: aliceblue;
     position: fixed;
     width: 50%;
