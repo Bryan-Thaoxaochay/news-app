@@ -12,20 +12,22 @@ const Main = () => {
     <Container fluid main>
       <Row topRow>
         <Col size="12">
-            <Nav/>
-            {/* <Profile/> */}
+          <Nav />
+          {/* <Profile/> */}
         </Col>
       </Row>
       <Row botRow>
         <Col size="2" className="side-Bar">
+            <SideBar />
+        </Col>
+        <Col size="9">
           <Container fluid content>
-            <SideBar/>
+            <CategoryResults />
           </Container>
         </Col>
-          <Col size="9">
-            <Container fluid content>
-              <CategoryResults />
-            </Container>
+        <Col size="1">
+          <Container>
+          </Container>
         </Col>
       </Row>
     </Container>

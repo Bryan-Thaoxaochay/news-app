@@ -10,10 +10,10 @@ function ArticlesBtn() {
             <Link to="/saved-articles">
                 <button
                     type="button"
-                    className="btn btn-link category-link"
+                    className="btn btn-link category-link category-btn"
                 >
                     <img src="/assets/star-fill.svg" className="Saved-icon category-icons" height="25px" width="25px"></img>
-                View Saved Articles
+                Saved Articles
             </button>
             </Link>
 

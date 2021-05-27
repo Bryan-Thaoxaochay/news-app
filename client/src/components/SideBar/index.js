@@ -49,19 +49,7 @@ function SideBar() {
     const [category] = useState(categories);
 
     return (
-        <Container className="sideBar">
-            <Row>
-                <div className="card" id="timeBar">
-                    <Container fluid content className="side-Bar">
-                        <Row half>
-                            <DateTime />
-                        </Row>
-                        <Row half>
-                            <TimeToggler />
-                        </Row>
-                    </Container>
-                </div>
-            </Row>
+        <Container sideBar className="side-Bar">
             <Row>
                 <div className="sidebar-cards" id="catList">
                     <div className="card-header catHeader">
@@ -71,7 +59,7 @@ function SideBar() {
                         <li className="categorySearch">
                             <button
                                 type="button"
-                                className="btn btn-link category-link"
+                                className="btn btn-link category-link category-btn"
                                 id={categoryElement.name}
                                 value={categoryElement.name}
                                 onClick={e => setCategory(e.target.value)}
@@ -81,7 +69,9 @@ function SideBar() {
                             </button>
                         </li>
                     ))}
-                    <ArticlesBtn />
+                    <li className="categorySearch saved-articles-btn">
+                        <ArticlesBtn />
+                    </li>
                 </div>
             </Row>
         </Container>

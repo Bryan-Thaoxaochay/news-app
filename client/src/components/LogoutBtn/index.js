@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { PersonFill } from 'react-bootstrap-icons';
 import "./style.css";
 
 function LogoutButton() {
@@ -7,10 +8,7 @@ function LogoutButton() {
 
     return (
         isAuthenticated && (
-            <div id="logoutDiv">
-            <button className="logout-btn rounded-pill" onClick={() => logout({ returnTo: "https://news-app-5.herokuapp.com/"})}>Log Out</button>
-            <span className="logIcon"></span>
-            </div>
+            <button className="logout-btn" onClick={() => logout({ returnTo: "https://news-app-5.herokuapp.com/"})}><PersonFill className="logIcon"/>Log Out</button>
         )
     );
 };
