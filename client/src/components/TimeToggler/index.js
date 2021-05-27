@@ -204,7 +204,7 @@ function TimeToggler() {
 
     return (
 
-        < div className="timeTogglerComponent">
+        < div className="timeTogglerComponent" id="timeTog">
             <CaretLeftFill className="arrow leftArrow" onClick={handleLeftArrowClick} />
 
             {whatTime.map(timeframe => (

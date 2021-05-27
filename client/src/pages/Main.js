@@ -18,7 +18,9 @@ const Main = () => {
       </Row>
       <Row botRow>
         <Col size="2" className="side-Bar">
+            <Container fluid content>
             <SideBar />
+            </Container>
         </Col>
         <Col size="9">
           <Container fluid content>

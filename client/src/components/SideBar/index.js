@@ -9,7 +9,7 @@ import ArticlesBtn from "../ArticlesBtn"
 import "./style.css"
 
 
-function SideBar() {
+function SideBar () {
 
     const { setCategory } = useContext(CategoryContext);
 
@@ -42,10 +42,8 @@ function SideBar() {
             name: "Sports",
             icon: "/assets/sports.svg",
         }
-    ]
-
-
-
+    ];
+  
     const [category] = useState(categories);
 
     return (

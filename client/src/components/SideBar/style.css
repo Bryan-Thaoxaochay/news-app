@@ -1,7 +1,7 @@
 #catList {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     height: 100%;
-    width: 270px;
+    max-width: 200px;
     position: fixed;
     background:linear-gradient(to bottom, #265f75, #3046838f);
 }
